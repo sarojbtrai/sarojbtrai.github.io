@@ -1,0 +1,74 @@
+{
+  "countries": [
+    {
+      "name": "United States",
+      "Population": 331002651,
+      "GDP": 21137518,
+      "Area": 9833520,
+      "Capital": "Washington DC"
+    },
+    {
+      "name": "China",
+      "Population": 1439323776,
+      "GDP": 14342903,
+      "Area": 9596961,
+      "Capital": "Beijing"
+    },
+    {
+      "name": "India",
+      "Population": 1380004385,
+      "GDP": 2875142,
+      "Area": 3287263,
+      "Capital": "New Delhi"
+    },
+    {
+      "name": "Brazil",
+      "Population": 212559417,
+      "GDP": 1444734,
+      "Area": 8515767,
+      "Capital": "Brasilia"
+    },
+    {
+      "name": "Canada",
+      "Population": 37742154,
+      "GDP": 1736426,
+      "Area": 9984670,
+      "Capital": "Ottawa"
+    },
+    {
+      "name": "Germany",
+      "Population": 83783942,
+      "GDP": 3845630,
+      "Area": 357022,
+      "Capital": "Berlin"
+    },
+    {
+      "name": "France",
+      "Population": 65273511,
+      "GDP": 2777535,
+      "Area": 551695,
+      "Capital": "Paris"
+    },
+    {
+      "name": "Japan",
+      "Population": 126476461,
+      "GDP": 5081770,
+      "Area": 377975,
+      "Capital": "Tokyo"
+    },
+    {
+      "name": "Russia",
+      "Population": 145934462,
+      "GDP": 1699876,
+      "Area": 17098242,
+      "Capital": "Moscow"
+    },
+    {
+      "name": "Australia",
+      "Population": 25499884,
+      "GDP": 1392687,
+      "Area": 7692024,
+      "Capital": "Canberra"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Comparison List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Country Comparison List</h1>
+        <div class="comparison-links" id="comparisonLinks">
+            <!-- Links will be generated here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Global variable to store fetched country data
+        let countriesList = [];
+
+        // Fetch countries data from JSON file
+        function fetchCountries() {
+            return fetch('countries.json')
+                .then(response => response.json())
+                .then(data => {
+                    countriesList = data.countries;
+                    generateComparisonLinks();
+                })
+                .catch(error => {
+                    console.error('Error fetching the data:', error);
+                });
+        }
+
+        // Function to generate comparison links
+        function generateComparisonLinks() {
+            const comparisonLinksDiv = document.getElementById('comparisonLinks');
+            comparisonLinksDiv.innerHTML = '';
+            const comparisons = [
+                ['India', 'China'],
+                ['India', 'Australia'],
+                // Add more comparisons as needed
+            ];
+            comparisons.forEach(([country1, country2]) => {
+                const link = document.createElement('a');
+                link.href = `index.html?country1=${encodeURIComponent(country1)}&country2=${encodeURIComponent(country2)}`;
+                link.textContent = `${country1} vs ${country2}`;
+                link.style.display = 'block';
+                comparisonLinksDiv.appendChild(link);
+            });
+        }
+
+        // Fetch countries data when the page loads
+        fetchCountries();
+    </script>
+</body>
+</html>
