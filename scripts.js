@@ -1,21 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const sidebarToggle = document.getElementById('sidebarToggle');
+  const menuButton = document.getElementById('menu-button');
   const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('overlay');
-  const closeBtn = document.getElementById('closeBtn');
+  const content = document.getElementById('content');
 
-  sidebarToggle.addEventListener('click', function() {
-      sidebar.classList.add('open');
-      overlay.classList.add('open');
+  menuButton.addEventListener('click', function() {
+      sidebar.classList.toggle('open');
   });
 
-  closeBtn.addEventListener('click', function() {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('open');
-  });
-
-  overlay.addEventListener('click', function() {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('open');
+  // Close sidebar when clicking outside of it on mobile
+  document.addEventListener('click', function(event) {
+      if (!sidebar.contains(event.target) && event.target !== menuButton) {
+          sidebar.classList.remove('open');
+      }
   });
 });
