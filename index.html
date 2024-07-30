@@ -3,49 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Country Comparison</title>
-    <meta name="description" content="Compare various metrics between different countries">
-    <meta name="keywords" content="Country comparison, GDP, population, metrics">
+    <title>Nepalstats.com</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="application/ld+json" id="structuredData">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebPage",
-      "mainEntity": {
-        "@type": "Comparison",
-        "name": "Country Comparison",
-        "itemListElement": []
-      }
-    }
-    </script>
-  </head>
+</head>
 <body>
-  <div class="container">
-    <h1>Country Comparison</h1>
-    <div class="inputs">
-      <input type="text" id="country1" list="countriesList" placeholder="Enter first country">
-      <input type="text" id="country2" list="countriesList" placeholder="Enter second country">
-      <button id="compareButton">Compare</button>
-      <datalist id="countriesList"></datalist>
+    <header class="topbar">
+        <button id="menu-button" class="menu-button">☰</button>
+        <h1>Nepalstats.com</h1>
+    </header>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <h1>Nepalstats.com</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Province 1</a></li>
+                    <li><a href="#">Province 2</a></li>
+                    <li><a href="#">Districts</a></li>
+                    <li><a href="#">Compare Province</a></li>
+                    <li><a href="#">Compare Districts</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content" id="content">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+            <div class="card">Card 4</div>
+            <div class="card">Card 5</div>
+            <div class="card">Card 6</div>
+            <div class="card">Card 7</div>
+            <div class="card">Card 8</div>
+            <div class="card">Card 9</div>
+            <div class="card">Card 10</div>
+        </main>
     </div>
-    <div id="result">
-      <div id="comparisonHeading" style="display: flex; align-items: center; justify-content: center;">
-        <img id="country1Flag" src="" alt="Country 1 Flag" style="display: none; width: 50px; margin-right: 10px;">
-        <h2 id="comparisonText">Click to compare</h2>
-        <img id="country2Flag" src="" alt="Country 2 Flag" style="display: none; width: 50px; margin-left: 10px;">
-      </div>
-      <table id="comparisonTable" style="display: none;">
-        <thead>
-          <tr>
-            <th id="country1Header">Country 1</th>
-            <th>Metric</th>
-            <th id="country2Header">Country 2</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </div>
-  <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
