@@ -1,0 +1,87 @@
+{
+    "province1": {
+      "Official Name": "Province 1",
+      "Capital": "Biratnagar",
+      "Population": "1,000,000",
+      "Area": "14,000 km²",
+      "GDP": "$10 billion",
+      "Literacy Rate": "85%",
+      "Major Industries": "Textiles, Agriculture",
+      "Elevation": "200 m",
+      "Language": "Nepali",
+      "Timezone": "GMT+5:45"
+    },
+    "province2": {
+      "Official Name": "Province 2",
+      "Capital": "Janakpur",
+      "Population": "2,000,000",
+      "Area": "20,000 km²",
+      "GDP": "$12 billion",
+      "Literacy Rate": "80%",
+      "Major Industries": "Agriculture, Tourism",
+      "Elevation": "100 m",
+      "Language": "Maithili",
+      "Timezone": "GMT+5:45"
+    },
+    "province3": {
+      "Official Name": "Province 3",
+      "Capital": "Hetauda",
+      "Population": "1,500,000",
+      "Area": "15,000 km²",
+      "GDP": "$11 billion",
+      "Literacy Rate": "90%",
+      "Major Industries": "Mining, Agriculture",
+      "Elevation": "500 m",
+      "Language": "Nepali",
+      "Timezone": "GMT+5:45"
+    },
+    "province4": {
+      "Official Name": "Province 4",
+      "Capital": "Pokhara",
+      "Population": "1,200,000",
+      "Area": "18,000 km²",
+      "GDP": "$13 billion",
+      "Literacy Rate": "88%",
+      "Major Industries": "Tourism, Agriculture",
+      "Elevation": "800 m",
+      "Language": "Nepali",
+      "Timezone": "GMT+5:45"
+    },
+    "province5": {
+      "Official Name": "Province 5",
+      "Capital": "Butwal",
+      "Population": "1,800,000",
+      "Area": "22,000 km²",
+      "GDP": "$14 billion",
+      "Literacy Rate": "82%",
+      "Major Industries": "Textiles, Agriculture",
+      "Elevation": "300 m",
+      "Language": "Nepali",
+      "Timezone": "GMT+5:45"
+    },
+    "province6": {
+      "Official Name": "Province 6",
+      "Capital": "Dhangadhi",
+      "Population": "1,000,000",
+      "Area": "16,000 km²",
+      "GDP": "$9 billion",
+      "Literacy Rate": "79%",
+      "Major Industries": "Agriculture, Trade",
+      "Elevation": "250 m",
+      "Language": "Nepali",
+      "Timezone": "GMT+5:45"
+    },
+    "province7": {
+      "Official Name": "Province 7",
+      "Capital": "Mahendranagar",
+      "Population": "900,000",
+      "Area": "12,000 km²",
+      "GDP": "$8 billion",
+      "Literacy Rate": "75%",
+      "Major Industries": "Trade, Agriculture",
+      "Elevation": "200 m",
+      "Language": "Nepali",
+      "Timezone": "GMT+5:45"
+    }
+  }
+  

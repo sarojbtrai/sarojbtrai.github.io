@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare Provinces in Nepal">
+    <title>Compare Provinces - Nepalstats.com</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="compare-provinces.css">
+</head>
+<body>
+    <header class="topbar">
+        <button id="menu-button" class="menu-button">☰</button>
+        <h1>Nepalstats.com</h1>
+    </header>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <h1>Nepalstats.com</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="../index.html" class="nav-link" id="home-link">Home</a></li>
+                    <li class="nav-item"><a href="koshi.html" class="nav-link" id="koshi-link">Koshi Province</a></li>
+                    <li class="nav-item"><a href="madhesh.html" class="nav-link" id="madhesh-link">Madhesh Province</a></li>
+                    <li class="nav-item"><a href="bagmati.html" class="nav-link" id="bagmati-link">Bagmati Province</a></li>
+                    <li class="nav-item"><a href="gandaki.html" class="nav-link" id="gandaki-link">Gandaki Province</a></li>
+                    <li class="nav-item"><a href="lumbini.html" class="nav-link" id="lumbini-link">Lumbini Province</a></li>
+                    <li class="nav-item"><a href="karnali.html" class="nav-link" id="karnali-link">Karnali Province</a></li>
+                    <li class="nav-item"><a href="sudurp.html" class="nav-link" id="sudurp-link">Sudur Paschim Province</a></li>
+                    <li class="nav-item"><a href="../districts.html" class="nav-link">All Districts</a></li>
+                    <li class="nav-item"><a href="compare-provinces.html" class="nav-link">Compare Province</a></li>
+                    <li class="nav-item"><a href="../Dis/comdi.html" class="nav-link">Compare Districts</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <div class="compare-container">
+                <div class="input-container">
+                    <div id="input-wrapper1" class="input-wrapper">
+                        <input type="text" id="province1" placeholder="Select Province 1">
+                        <div class="suggestions" id="suggestions-province1"></div>
+                    </div>
+                    <div id="input-wrapper2" class="input-wrapper">
+                        <input type="text" id="province2" placeholder="Select Province 2">
+                        <div class="suggestions" id="suggestions-province2"></div>
+                    </div>
+                </div>
+                <button id="compare-button" class="compare-button">Compare</button>
+                <div id="comparison-results" class="compare-results" style="display: none;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th id="province1-header">Province 1</th>
+                                <th>Metric</th>
+                                <th id="province2-header">Province 2</th>
+                            </tr>
+                        </thead>
+                        <tbody id="comparison-table-body">
+                            <!-- Comparison rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <button id="lang-switcher" class="lang-switcher lang-switcher-desktop">EN</button>
+    <button id="lang-switcher-mobile" class="lang-switcher lang-switcher-mobile">Switch Language</button>
+    <script src="compare-provinces.js"></script>
+    <script src="../scripts.js"></script>
+</body>
+</html>
