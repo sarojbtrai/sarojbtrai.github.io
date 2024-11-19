@@ -1,0 +1,27 @@
+#bigyapan {
+  width: 100%; /* Set the width to 100% of the parent container */
+  max-width: 600px; /* Max width of the ad container */
+  margin: 20px auto; /* Center the ad container horizontally */
+  padding: 15px;
+  background-color: #f1f1f1; /* Light gray background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow */
+  text-align: center; /* Center the content inside the ad container */
+}
+
+#bigyapan img {
+  width: 100%; /* Make sure the image fits within the container */
+  height: auto; /* Maintain the image's aspect ratio */
+  border-radius: 5px; /* Optional: Add rounded corners to the image */
+}
+
+#bigyapan p {
+  font-size: 18px; /* Text size for the text ads */
+  color: #333; /* Text color */
+  font-weight: bold; /* Make the text bold */
+}
+
+
+To add bigyapan on page
+  <div id="bigyapan"></div>
+  <script src="bigyapan.js"></script>
