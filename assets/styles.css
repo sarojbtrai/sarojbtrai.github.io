@@ -1,0 +1,145 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f8fb;
+  color: #333;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0077b6;
+  color: white;
+  padding: 10px 15px;
+  height: 60px;
+}
+
+.navbar .nav-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.navbar .nav-btn:hover {
+  background-color: white;
+  color: #0077b6;
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Language Toggle */
+.language-toggle {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.language-toggle .toggle-btn {
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  padding: 7px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Noto Color Emoji', sans-serif;
+}
+
+.language-toggle .toggle-btn.active {
+  background-color: #005f8b;
+}
+
+/* Heading Section */
+.heading-container {
+  padding: 20px 15px;
+  text-align: center;
+}
+
+.province-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0077b6;
+  margin: 0;
+}
+
+/* Card Container */
+.card-container {
+  display: grid;
+  gap: 15px; /* Space between cards */
+  padding: 15px;
+  grid-template-columns: repeat(2, 1fr); /* Default: 2 cards per row */
+}
+
+#bigyapan {
+  width: 100%; /* Set the width to 100% of the parent container */
+  max-width: 600px; /* Max width of the ad container */
+  margin: 20px auto; /* Center the ad container horizontally */
+  padding: 15px;
+  background-color: #f1f1f1; /* Light gray background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow */
+  text-align: center; /* Center the content inside the ad container */
+}
+
+#bigyapan img {
+  width: 100%; /* Make sure the image fits within the container */
+  height: auto; /* Maintain the image's aspect ratio */
+  border-radius: 5px; /* Optional: Add rounded corners to the image */
+}
+
+#bigyapan p {
+  font-size: 18px; /* Text size for the text ads */
+  color: #333; /* Text color */
+  font-weight: bold; /* Make the text bold */
+}
+
+
+/* Medium screens: 3 cards per row */
+@media (min-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large screens: 4 cards per row */
+@media (min-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  color: inherit; /* Use default text color */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
