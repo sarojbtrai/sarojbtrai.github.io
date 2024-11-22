@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Province Profile</title>
-  <link rel="stylesheet" href="../assets/styles.css">
+  <title>Districts</title>
+  <link rel="stylesheet" href="../assets/styles.css"> <!-- Adjust the path for CSS -->
 </head>
 <body>
   <header class="navbar">
     <button class="nav-btn" id="home-btn">गृहपृष्ठ</button>
-    <h1 class="site-title">नेपाल केन्द्रीय</h1>
+    <h1 class="site-title">Nepal Districts</h1>
     <button class="nav-btn" id="back-btn">फिर्ता</button>
   </header>
 
-  <div class="language-toggle">
-    <button id="np-btn" class="toggle-btn">🇳🇵 NP</button>
-    <button id="en-btn" class="toggle-btn active">🇺🇸 EN</button>
+  <div class="search-container">
+    <input type="text" id="search-bar" placeholder="Search for a district..." onkeyup="filterDistricts()">
   </div>
 
-  <main class="card-container">
-    <a href="" class="card">निर्माण प्रक्रियामा</a>
+  <main class="card-container" id="districts-container">
+    <!-- Cards will be dynamically loaded here -->
   </main>
 
-  <script src="../assets/script.js"></script>
+  <!-- Link to your main JS and districts-specific JS -->
+  <script src="../assets/script.js"></script> <!-- Adjust the path for global JS -->
+  <script src="districts.js"></script>  <!-- Link to the districts-specific JS -->
 </body>
 </html>
