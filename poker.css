@@ -1,0 +1,640 @@
+/*
+   PokerHama — Poker Guide & Tournament Hub
+   Includes real playing card symbols
+   Updated: 2025-11-27
+*/
+
+:root {
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --header-bg: #ffffff;
+
+  --fg: #0f172a;
+  --fg-muted: #475569;
+  --fg-accent: #0f766e;
+
+  --border: #cbd5e1;
+  --border-strong: #94a3b8;
+  --border-light: #e2e8f0;
+
+  --shadow-sm: rgba(0, 20, 60, 0.04);
+  --shadow: rgba(0, 20, 60, 0.06);
+  --shadow-hover: rgba(0, 20, 60, 0.1);
+
+  /* === Distinct Green-Blue Accents (Light Mode) === */
+  --color-intro:        #0f766e;     /* Deep teal */
+  --color-gameflow:     #115e59;     /* Darker teal */
+  --color-variants:     #0d5a5e;     /* Teal-blue */
+  --color-rankings:     #1e5e6c;     /* Steel blue */
+  --color-starting:     #225a55;     /* Forest teal */
+  --color-guide:        #1a5650;     /* Muted green */
+  --color-terminology:  #15525d;     /* Blue-green */
+
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+[data-theme='dark'] {
+  --bg: #0b0f19;
+  --card-bg: #121826;
+  --header-bg: #121826;
+
+  --fg: #f1f5f9;
+  --fg-muted: #cbd5e1;
+  --fg-accent: #10b981;
+
+  --border: #334155;
+  --border-strong: #64748b;
+  --border-light: #1e293b;
+
+  --shadow-sm: rgba(0, 0, 0, 0.16);
+  --shadow: rgba(0, 0, 0, 0.24);
+  --shadow-hover: rgba(0, 0, 0, 0.32);
+
+  /* === Dark Mode: Slightly brighter but matching hues === */
+  --color-intro:        #10b981;
+  --color-gameflow:     #0f9f8f;
+  --color-variants:     #1096a0;
+  --color-rankings:     #2a9abf;
+  --color-starting:     #2ea18f;
+  --color-guide:        #1f9788;
+  --color-terminology:  #1a92a3;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  line-height: 1.48;
+  font-size: 14.8px;
+  padding-bottom: 1.8rem;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 3.2rem;
+  }
+}
+
+/* Brand Header — Updated to "PokerHama" */
+.brand-header {
+  display: flex;
+  justify-content: center;
+  padding: 0.85rem 0;
+  position: relative;
+  background: var(--header-bg);
+  border-bottom: 2px solid var(--border-strong);
+}
+
+.brand-header a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: var(--fg);
+  font-size: 1.65rem;
+  font-weight: 800;
+}
+
+.brand-text::before {
+  content: 'Poker';
+  color: var(--fg-accent);
+}
+.brand-text::after {
+  content: 'Hama';
+  color: var(--color-gameflow);
+  font-weight: 700;
+  font-size: 0.92em;
+  opacity: 0.94;
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 1024px) {
+  .theme-toggle {
+    right: 3.2rem;
+  }
+}
+
+.theme-toggle:hover {
+  border-color: var(--fg-accent);
+  background: rgba(15, 118, 110, 0.06);
+}
+
+/* === Navigation Tabs === */
+.main-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 0 0.9rem;
+  margin: 0.85rem auto 1rem;
+  background: var(--bg);
+  border-bottom: 2px solid var(--border-strong);
+}
+
+@media (min-width: 1024px) {
+  .main-tabs {
+    padding: 0 3.2rem;
+  }
+}
+
+.main-tab-btn {
+  flex: 1 1 calc(100% / 9 - 1px);
+  min-width: 110px;
+  max-width: 180px;
+  background: transparent;
+  border: none;
+  padding: 0.74rem 0.9rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--fg-muted);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: -2px;
+  line-height: 1.3;
+}
+
+@media (min-width: 769px) {
+  .main-tab-btn {
+    flex: 1;
+    min-width: auto;
+  }
+}
+
+.main-tab-btn:hover:not(.active) {
+  color: var(--fg-accent);
+  background: rgba(15, 118, 110, 0.06);
+}
+
+.main-tab-btn.active {
+  background: var(--fg-accent) !important;
+  color: white !important;
+  font-weight: 700;
+  z-index: 3;
+  box-shadow: 0 -2px 8px var(--shadow);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.main-tabs a.main-tab-btn {
+  text-decoration: none;
+  color: var(--fg-muted);
+  display: block;
+}
+
+.main-tabs a.main-tab-btn:hover:not(.active) {
+  color: var(--fg-accent);
+  background: rgba(15, 118, 110, 0.06);
+}
+
+@media (max-width: 768px) {
+  .main-tab-btn {
+    flex: 1 1 130px;
+    padding: 0.68rem 0.7rem;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-tab-btn {
+    flex: 1 1 100%;
+    padding: 0.64rem 0.8rem;
+    font-size: 0.87rem;
+  }
+}
+
+/* Join Buttons */
+.join-btn.alt-btn,
+.join-btn {
+  background: var(--fg-accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.52rem 0.9rem;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px var(--shadow-sm);
+}
+
+.join-btn.alt-btn {
+  flex: 1 1 180px;
+  max-width: 220px;
+  min-width: 140px;
+}
+
+.join-btn.alt-btn:hover,
+.join-btn:hover {
+  background: #0d665d;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 7px var(--shadow);
+}
+
+[data-theme='dark'] .join-btn.alt-btn:hover,
+[data-theme='dark'] .join-btn:hover {
+  background: #0d947a;
+}
+
+@media (max-width: 640px) {
+  .join-btn.alt-btn {
+    min-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+/* Format Box */
+.format-box {
+  background: var(--bg);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 0.85rem 1.1rem;
+  margin: 0.6rem 0;
+  font-size: 15.2px;
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+/* SECTION CARDS */
+.section-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 13px;
+  margin: 0.9rem 0;
+  box-shadow: 0 3px 10px var(--shadow);
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.2, 0, 0.1, 1);
+}
+
+.section-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 6px 16px var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.section-header {
+  padding: 0.8rem 4rem;
+  font-weight: 800;
+  font-size: 1.24rem;
+  color: white;
+  letter-spacing: -0.4px;
+  background: linear-gradient(135deg, var(--header-color), var(--header-color-end));
+}
+
+/* === Unique Gradients for Each Section === */
+.intro .section-header        { --header-color: var(--color-intro);        --header-color-end: #0c5f58; }
+.gameflow .section-header     { --header-color: var(--color-gameflow);     --header-color-end: #0e4a46; }
+.variants .section-header     { --header-color: var(--color-variants);     --header-color-end: #0a4a4e; }
+.rankings .section-header     { --header-color: var(--color-rankings);     --header-color-end: #184b56; }
+.starting .section-header     { --header-color: var(--color-starting);     --header-color-end: #1b4843; }
+.guide .section-header        { --header-color: var(--color-guide);        --header-color-end: #154742; }
+.terminology .section-header  { --header-color: var(--color-terminology);  --header-color-end: #11434a; }
+
+.section-body {
+  padding: 1rem 4rem;
+  font-size: 16.4px;
+  color: var(--fg);
+  line-height: 1.52;
+}
+
+.section-body p,
+.section-body li {
+  margin-bottom: 0.75rem;
+  color: var(--fg-muted);
+  font-size: 16.4px;
+}
+
+.section-body a {
+  color: var(--fg-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.section-body ul,
+.section-body ol {
+  padding-left: 1.7rem;
+  margin: 0.85rem 0;
+}
+
+/* Terminology Cards */
+.term-card {
+  background: var(--bg);
+  border: 2px solid var(--border-light);
+  border-radius: 11px;
+  padding: 0.8rem 1.4rem;
+  margin-bottom: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+  transition: border-color 0.18s ease;
+}
+
+.term-card:hover {
+  border-color: var(--border);
+}
+
+.term-name {
+  font-weight: 800;
+  color: var(--fg-accent);
+  flex: 1 1 80px;
+  min-width: 90px;
+  font-size: 16.8px;
+}
+
+.term-def {
+  color: var(--fg-muted);
+  flex: 3 1 270px;
+  font-size: 16.2px;
+  line-height: 1.48;
+}
+
+/* === REAL PLAYING CARD SYMBOLS === */
+.card-symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 72px;
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin: 0 4px 6px;
+  box-shadow: 0 2px 4px var(--shadow-sm);
+  font-family: 'Courier New', monospace;
+  flex-shrink: 0;
+  transition: all 0.18s ease;
+}
+
+.card-symbol:hover {
+  transform: scale(1.12);
+  z-index: 2;
+  box-shadow: 0 4px 8px var(--shadow);
+  border-color: var(--fg-accent);
+}
+
+.s-heart   { color: #ef4444; }          /* Red */
+.s-diamond { color: #a52a2a; }          /* BRICK RED */
+.s-spade   { color: var(--fg-accent); } /* Teal */
+.s-club    { color: var(--fg); }        /* Text color */
+
+[data-theme='dark'] .card-symbol {
+  background: #1a2130;
+  border-color: #475569;
+}
+
+/* Hand Rankings */
+.hand-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-light);
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.hand-item:last-child {
+  border-bottom: none;
+}
+
+.hand-name {
+  font-weight: 800;
+  color: var(--fg-accent);
+  font-size: 16.8px;
+  margin-bottom: 0.3rem;
+}
+
+.hand-cards {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 769px) {
+  .hand-item {
+    flex-wrap: nowrap;
+    gap: 1.2rem;
+  }
+  .hand-name {
+    flex: 0 0 190px;
+    margin-bottom: 0;
+  }
+  .hand-cards {
+    flex: 1;
+    justify-content: flex-start;
+  }
+}
+
+/* === Tournament Section === */
+.tournament-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.tournament-card {
+  background: var(--bg);
+  border: 2px solid var(--border-light);
+  border-radius: 11px;
+  padding: 1.1rem;
+  transition: border-color 0.18s ease;
+}
+
+.tournament-card:hover {
+  border-color: var(--border);
+}
+
+.tournament-name {
+  font-weight: 800;
+  font-size: 19px;
+  color: var(--color-gameflow);
+  margin-bottom: 0.8rem;
+}
+
+.tournament-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.reg-deadline,
+.game-date {
+  flex: 1 1 200px;
+}
+
+.date-time {
+  color: var(--fg);
+  font-weight: 600;
+  font-size: 16.4px;
+}
+
+.tournament-info {
+  padding-left: 1.4rem;
+  margin: 0.8rem 0;
+  color: var(--fg-muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.button-center {
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 1.9rem;
+  padding: 1rem;
+  font-size: 0.87rem;
+  color: var(--fg-muted);
+  border-top: 1px solid var(--border-light);
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: 1rem 3.2rem;
+  }
+}
+
+/* Go to Top */
+#goToTop {
+  position: fixed;
+  bottom: max(1.3rem, env(safe-area-inset-bottom, 1.3rem));
+  right: max(1.3rem, env(safe-area-inset-right, 1.3rem));
+  width: 42px;
+  height: 42px;
+  background: var(--fg-accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.28s ease;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+#goToTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#goToTop:hover {
+  background: #0d665d;
+}
+
+[data-theme='dark'] #goToTop {
+  background: #10b981;
+}
+
+[data-theme='dark'] #goToTop:hover {
+  background: #0d947a;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .container { padding: 0 1.1rem; }
+  .brand-header a { font-size: 1.55rem; gap: 0.7rem; }
+  .section-header { font-size: 1.18rem; padding: 0.75rem 1.1rem; }
+  .section-body { padding: 0.95rem 1.1rem; font-size: 16px; }
+  .card-symbol {
+    width: 46px;
+    height: 64px;
+    font-size: 1.3rem;
+    margin: 0 3px 5px;
+  }
+  .tournament-dates {
+    flex-direction: row;
+    gap: 0.8rem;
+  }
+  .reg-deadline,
+  .game-date {
+    flex: 1 1 calc(50% - 0.4rem);
+  }
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 0.95rem; }
+  .brand-header a { font-size: 1.4rem; }
+  .hand-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .card-symbol {
+    width: 40px;
+    height: 56px;
+    font-size: 1.15rem;
+    margin: 0 2.5px 4px;
+  }
+  .hand-name,
+  .hand-cards {
+    flex: 1 1 100%;
+  }
+  .tournament-dates {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .reg-deadline,
+  .game-date {
+    flex: 1 1 100%;
+  }
+}

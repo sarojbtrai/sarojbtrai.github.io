@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Razz Poker Guide – Rules, Strategy & Low Hand Rankings | PokerHama</title>
+  <meta name="description" content="Learn Razz poker: rules, how to play, hand rankings (lowest wins), starting hands, and beginner strategy.">
+  <meta name="keywords" content="Razz poker, 7-card stud low, poker lowball, Razz rules, low hand rankings, poker strategy, stud variants, PokerHama">
+  <meta name="author" content="PokerHama">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pokerhama.com/razz.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Razz Poker Guide – Lowest Hand Wins | PokerHama">
+  <meta property="og:description" content="Complete Razz poker guide: rules, gameplay, hand rankings, and strategy tips for beginners and intermediate players.">
+  <meta property="og:url" content="https://pokerhama.com/razz.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Razz Poker Guide | PokerHama">
+  <meta name="twitter:description" content="Master Razz: the lowest 5-card hand wins. Learn rules, starting hands, and strategy.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🃏</text></svg>">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="poker.css">
+</head>
+<body>
+  <h1 style="font-size:0; opacity:0; height:0;">Razz Poker Guide – Rules, Low Hands & Strategy</h1>
+
+  <div class="container">
+    <header class="brand-header" role="banner">
+      <a href="index.html" aria-label="PokerHama Home">
+        🃏
+        <div class="brand-text"></div>
+      </a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode"></button>
+    </header>
+
+    <nav class="main-tabs" role="navigation" aria-label="Main sections">
+      <a href="index.html" class="main-tab-btn">Home</a>
+      <a href="holdem.html" class="main-tab-btn">Texas Hold'em</a>
+      <a href="short-deck.html" class="main-tab-btn">Short Deck</a>
+      <a href="omaha.html" class="main-tab-btn">Omaha</a>
+      <a href="stud.html" class="main-tab-btn">Stud</a>
+      <button class="main-tab-btn active">Razz</button>
+      <a href="27draw.html" class="main-tab-btn">2-7 Draw</a>
+      <a href="badugi.html" class="main-tab-btn">Badugi</a>
+      <a href="baduci.html" class="main-tab-btn">Baduci</a>
+      <a href="five-card-draw.html" class="main-tab-btn">5 Card Draw</a>
+    </nav>
+
+    <main>
+      <div class="section-card intro">
+        <div class="section-header"><i class="fas fa-arrow-down" style="margin-right: 8px;"></i> Introduction</div>
+        <div class="section-body">
+          <p><strong>Razz</strong> is a lowball variant of Seven Card Stud where the <strong>lowest 5-card hand wins</strong>. Aces are always low, straights and flushes <em>do not count</em> against you, and pairs hurt your hand.</p>
+        </div>
+      </div>
+
+      <div class="section-card gameflow">
+        <div class="section-header"><i class="fas fa-random" style="margin-right: 8px;"></i> Game Flow</div>
+        <div class="section-body">
+          <ol>
+            <li>Each player is dealt <strong>2 down cards</strong> and <strong>1 up card</strong> (face up).</li>
+            <li><strong>Third Street</strong>: First betting round begins with the player showing the highest up card.</li>
+            <li><strong>Fourth Street</strong>: Each player receives a 2nd up card → 2nd betting round.</li>
+            <li><strong>Fifth Street</strong>: Another up card → 3rd betting round.</li>
+            <li><strong>Sixth Street</strong>: Final up card → 4th betting round.</li>
+            <li><strong>Seventh Street</strong>: Final card dealt <em>face down</em> → final betting round.</li>
+            <li><strong>Showdown</strong>: Players make their best 5-card <strong>low hand</strong> from 7 cards.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="section-card rankings">
+        <div class="section-header"><i class="fas fa-sort-numeric-down" style="margin-right: 8px;"></i> Best Low Hands</div>
+        <div class="section-body">
+          <p>The best possible hand is <strong>5-4-3-2-A</strong> ("the wheel"), regardless of suits or sequence.</p>
+          <div class="hand-item">
+            <span class="hand-name">Best (The Wheel)</span>
+            <span class="hand-cards">
+              <span class="card-symbol s-spade">A♠</span>
+              <span class="card-symbol s-club">2♣</span>
+              <span class="card-symbol s-diamond">3♦</span>
+              <span class="card-symbol s-heart">4♥</span>
+              <span class="card-symbol s-spade">5♠</span>
+            </span>
+          </div>
+          <div class="hand-item">
+            <span class="hand-name">Next Best</span>
+            <span class="hand-cards">
+              <span class="card-symbol s-heart">A♥</span>
+              <span class="card-symbol s-spade">2♠</span>
+              <span class="card-symbol s-club">3♣</span>
+              <span class="card-symbol s-diamond">4♦</span>
+              <span class="card-symbol s-heart">6♥</span>
+            </span>
+          </div>
+          <p><strong>Worst Valid Hand:</strong> 
+            <span class="card-symbol s-spade">K♠</span>
+            <span class="card-symbol s-club">Q♣</span>
+            <span class="card-symbol s-diamond">J♦</span>
+            <span class="card-symbol s-heart">T♥</span>
+            <span class="card-symbol s-spade">9♠</span>
+          </p>
+          <p><em>Note: Pairs, straights, and flushes are ignored for hand strength — only rank matters.</em></p>
+        </div>
+      </div>
+
+      <div class="section-card starting">
+        <div class="section-header"><i class="fas fa-chess-knight" style="margin-right: 8px;"></i> Best Starting Hands</div>
+        <div class="section-body">
+          <ul>
+            <li><strong>Ideal:</strong> Three low, unpaired cards ≤7, e.g., 
+              <span class="card-symbol s-spade">3♠</span>
+              <span class="card-symbol s-club">2♣</span>
+              <span class="card-symbol s-diamond">A♦</span>
+            </li>
+            <li><strong>Playable:</strong> 
+              <span class="card-symbol s-heart">4♥</span>
+              <span class="card-symbol s-spade">5♠</span>
+              <span class="card-symbol s-club">2♣</span>
+            </li>
+            <li><strong>Avoid:</strong> Any pair or high card ≥8 in your first three cards.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-card guide">
+        <div class="section-header"><i class="fas fa-brain" style="margin-right: 8px;"></i> Strategy Guide</div>
+        <div class="section-body">
+          <ul>
+            <li><strong>Steal Antes:</strong> Razz often has antes, open-raise with decent lows to steal.</li>
+            <li><strong>Track Dead Cards:</strong> Note up cards that kill your draws (e.g., multiple 2s or 3s visible).</li>
+            <li><strong>Don’t Chase:</strong> If you pair or catch a high card early, fold unless very cheap.</li>
+            <li><strong>Read Boards:</strong> Opponents showing high cards are often weak, apply pressure.</li>
+            <li><strong>7-or-Better Rule:</strong> If your lowest 5 cards are all ≤7, you likely have a strong hand.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    &copy; 2025 PokerHama. All rights reserved.
+  </footer>
+
+  <button id="goToTop" aria-label="Go to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="poker.js"></script>
+</body>
+</html>

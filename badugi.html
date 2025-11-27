@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Badugi Poker Guide – Rules, Hand Rankings & Strategy | PokerHama</title>
+  <meta name="description" content="Learn Badugi poker: unique 4-card low hand rules, how suits matter, drawing strategy, and how to win with the best Badugi hand.">
+  <meta name="keywords" content="Badugi poker, Badugi rules, 4-card lowball, poker draw game, Badugi strategy, hand rankings, PokerHama">
+  <meta name="author" content="PokerHama">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pokerhama.com/badugi.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Badugi Poker Guide – The 4-Card Lowball Game | PokerHama">
+  <meta property="og:description" content="Complete Badugi guide: how to play, hand rankings, draw strategy, and what makes a strong Badugi hand.">
+  <meta property="og:url" content="https://pokerhama.com/badugi.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Badugi Poker Guide | PokerHama">
+  <meta name="twitter:description" content="Master Badugi: the quirky 4-card draw game where low and unsuited wins.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🃏</text></svg>">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="poker.css">
+</head>
+<body>
+  <h1 style="font-size:0; opacity:0; height:0;">Badugi Poker Guide – Rules, Hand Rankings & Strategy</h1>
+
+  <div class="container">
+    <header class="brand-header" role="banner">
+      <a href="index.html" aria-label="PokerHama Home">
+        🃏
+        <div class="brand-text"></div>
+      </a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode"></button>
+    </header>
+
+    <nav class="main-tabs" role="navigation" aria-label="Main sections">
+      <a href="index.html" class="main-tab-btn">Home</a>
+      <a href="holdem.html" class="main-tab-btn">Texas Hold'em</a>
+      <a href="short-deck.html" class="main-tab-btn">Short Deck</a>
+      <a href="omaha.html" class="main-tab-btn">Omaha</a>
+      <a href="stud.html" class="main-tab-btn">Stud</a>
+      <a href="razz.html" class="main-tab-btn">Razz</a>
+      <a href="27draw.html" class="main-tab-btn">2-7 Draw</a>
+      <button class="main-tab-btn active">Badugi</button>
+      <a href="baduci.html" class="main-tab-btn">Baduci</a>
+      <a href="five-card-draw.html" class="main-tab-btn">5 Card Draw</a>
+    </nav>
+
+    <main>
+      <div class="section-card intro">
+        <div class="section-header"><i class="fas fa-puzzle-piece" style="margin-right: 8px;"></i> Introduction</div>
+        <div class="section-body">
+          <p><strong>Badugi</strong> is a unique <strong>4-card lowball draw game</strong> where the best hand has <strong>four cards of different ranks and different suits</strong>. The goal is the lowest possible Badugi hand, ideally <strong>4-3-2-A</strong> with all suits distinct.</p>
+        </div>
+      </div>
+
+      <div class="section-card gameflow">
+        <div class="section-header"><i class="fas fa-redo" style="margin-right: 8px;"></i> Game Flow</div>
+        <div class="section-body">
+          <ol>
+            <li>Each player is dealt <strong>4 cards face down</strong>.</li>
+            <li><strong>First Betting Round</strong> (often fixed-limit).</li>
+            <li><strong>First Draw</strong>: Discard unwanted cards (0–4) and receive replacements.</li>
+            <li><strong>Second Betting Round</strong>.</li>
+            <li><strong>Second Draw</strong> → new cards dealt.</li>
+            <li><strong>Third Betting Round</strong>.</li>
+            <li><strong>Third (Final) Draw</strong>.</li>
+            <li><strong>Final Betting Round</strong>.</li>
+            <li><strong>Showdown</strong>: Best Badugi hand wins.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="section-card rankings">
+        <div class="section-header"><i class="fas fa-sort-numeric-down" style="margin-right: 8px;"></i> Hand Rankings</div>
+        <div class="section-body">
+          <p>A valid Badugi hand must have <strong>no paired ranks or suits</strong>. Hands are ranked first by <strong>number of valid cards</strong> (4 > 3 > 2 > 1), then by <strong>lowest high card</strong>.</p>
+          <div class="hand-item">
+            <span class="hand-name">Best Hand (4-card Badugi)</span>
+            <span class="hand-cards">
+              <span class="card-symbol s-spade">A♠</span>
+              <span class="card-symbol s-club">2♣</span>
+              <span class="card-symbol s-diamond">3♦</span>
+              <span class="card-symbol s-heart">4♥</span>
+            </span>
+          </div>
+          <div class="hand-item">
+            <span class="hand-name">3-Card Badugi</span>
+            <span class="hand-cards">
+              <span class="card-symbol s-spade">A♠</span>
+              <span class="card-symbol s-club">2♣</span>
+              <span class="card-symbol s-diamond">3♦</span>
+              <span class="card-symbol s-spade">5♠</span> <!-- same suit as A -->
+            </span>
+            <p><em>Only A♠, 2♣, 3♦ count → “3-card 3-high”</em></p>
+          </div>
+          <p><strong>Note:</strong> A hand like 
+            <span class="card-symbol s-spade">A♠</span>
+            <span class="card-symbol s-heart">A♥</span>
+            <span class="card-symbol s-club">2♣</span>
+            <span class="card-symbol s-diamond">4♦</span> 
+            is only a <em>2-card Badugi</em> (2♣ and 4♦; aces cancel each other).
+          </p>
+        </div>
+      </div>
+
+      <div class="section-card guide">
+        <div class="section-header"><i class="fas fa-chess" style="margin-right: 8px;"></i> Strategy Guide</div>
+        <div class="section-body">
+          <ul>
+            <li><strong>Chase 4-Card Hands:</strong> Never settle for 3-card unless pot odds justify it.</li>
+            <li><strong>Break Pairs Early:</strong> If you start with a pair, draw 3 to chase a 4-card Badugi.</li>
+            <li><strong>High Cards Are Dead Weight:</strong> Discard kings, queens, jacks unless you have no low cards.</li>
+            <li><strong>Read Opponent Draws:</strong> Fewer discards often mean a strong hand, proceed with caution.</li>
+            <li><strong>Position Matters:</strong> Acting last gives you critical info on how many cards others drew.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    &copy; 2025 PokerHama. All rights reserved.
+  </footer>
+
+  <button id="goToTop" aria-label="Go to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="poker.js"></script>
+</body>
+</html>

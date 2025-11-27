@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seven Card Stud Poker Guide – Rules & Strategy | PokerHama</title>
+  <meta name="description" content="Master Seven Card Stud poker: rules, hand rankings, betting structure, starting hands, and winning strategy.">
+  <meta name="keywords" content="Seven Card Stud, Stud poker, poker rules, hand rankings, poker strategy, high hand, 7-card stud, PokerHama">
+  <meta name="author" content="PokerHama">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pokerhama.com/stud.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Seven Card Stud Poker Guide | PokerHama">
+  <meta property="og:description" content="Complete Seven Card Stud guide: rules, gameplay, hand rankings, and strategy for high-hand poker.">
+  <meta property="og:url" content="https://pokerhama.com/stud.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Seven Card Stud Guide | PokerHama">
+  <meta name="twitter:description" content="Learn Seven Card Stud: hand rankings, betting rounds, and how to win with high hands.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🃏</text></svg>">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="poker.css">
+</head>
+<body>
+  <h1 style="font-size:0; opacity:0; height:0;">Seven Card Stud Poker Guide – Rules & Strategy</h1>
+
+  <div class="container">
+    <header class="brand-header" role="banner">
+      <a href="poker.html" aria-label="PokerHama Home">
+        🃏
+        <div class="brand-text"></div>
+      </a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode"></button>
+    </header>
+
+    <nav class="main-tabs" role="navigation" aria-label="Main sections">
+      <a href="poker.html" class="main-tab-btn">Home</a>
+      <a href="holdem.html" class="main-tab-btn">Texas Hold'em</a>
+      <a href="short-deck.html" class="main-tab-btn">Short Deck</a>
+      <a href="omaha.html" class="main-tab-btn">Omaha</a>
+      <button class="main-tab-btn active">Stud</button>
+      <a href="razz.html" class="main-tab-btn">Razz</a>
+      <a href="27draw.html" class="main-tab-btn">2-7 Draw</a>
+      <a href="badugi.html" class="main-tab-btn">Badugi</a>
+      <a href="baduci.html" class="main-tab-btn">Baduci</a>
+            <a href="five-card-draw.html" class="main-tab-btn">5 Card Draw</a>
+
+    </nav>
+
+    <main>
+      <div class="section-card intro">
+        <div class="section-header">Introduction</div>
+        <div class="section-body">
+          <p><strong>No community cards</strong>. Each player receives 7 cards (3 down, 4 up) and makes the best 5-card hand. The highest hand wins.</p>
+        </div>
+      </div>
+
+      <div class="section-card gameflow">
+        <div class="section-header">Game Flow</div>
+        <div class="section-body">
+          <ol>
+            <li>Each player posts an ante.</li>
+            <li>Dealt <strong>2 down cards</strong> + <strong>1 up card</strong>.</li>
+            <li><strong>Third Street</strong>: First betting round (lowest up card acts first).</li>
+            <li><strong>Fourth Street</strong>: 2nd up card dealt → betting (lowest up card acts first).</li>
+            <li><strong>Fifth Street</strong>: 3rd up card → betting (now highest hand showing acts first).</li>
+            <li><strong>Sixth Street</strong>: 4th up card → betting.</li>
+            <li><strong>Seventh Street</strong>: Final card dealt <em>face down</em> → final betting round.</li>
+            <li><strong>Showdown</strong>: Best 5-card poker hand wins.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="section-card rankings">
+        <div class="section-header">Hand Rankings</div>
+        <div class="section-body">
+          <p>Standard poker rankings apply (Royal Flush strongest, High Card weakest):</p>
+          <div class="hand-item">
+            <span class="hand-name">Royal Flush</span>
+            <span class="hand-cards">
+              <span class="card-symbol s-spade">A♠</span>
+              <span class="card-symbol s-spade">K♠</span>
+              <span class="card-symbol s-spade">Q♠</span>
+              <span class="card-symbol s-spade">J♠</span>
+              <span class="card-symbol s-spade">10♠</span>
+            </span>
+          </div>
+          <div class="hand-item">
+            <span class="hand-name">Full House</span>
+            <span class="hand-cards">
+              <span class="card-symbol s-heart">K♥</span>
+              <span class="card-symbol s-heart">K♦</span>
+              <span class="card-symbol s-club">K♣</span>
+              <span class="card-symbol s-spade">7♠</span>
+              <span class="card-symbol s-diamond">7♦</span>
+            </span>
+          </div>
+          <div class="hand-item">
+            <span class="hand-name">High Card Example</span>
+            <span class="hand-cards">
+              <span class="card-symbol s-spade">A♠</span>
+              <span class="card-symbol s-club">J♣</span>
+              <span class="card-symbol s-diamond">9♦</span>
+              <span class="card-symbol s-heart">6♥</span>
+              <span class="card-symbol s-spade">3♠</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card starting">
+        <div class="section-header">Best Starting Hands</div>
+        <div class="section-body">
+          <ul>
+            <li><strong>Premium:</strong> Rolled-up trips (e.g., 
+              <span class="card-symbol s-spade">8♠</span>
+              <span class="card-symbol s-club">8♣</span>
+              <span class="card-symbol s-diamond">8♦</span>)
+            </li>
+            <li><strong>Strong:</strong> High pairs with high kicker (e.g., 
+              <span class="card-symbol s-heart">A♥</span>
+              <span class="card-symbol s-spade">A♠</span>
+              <span class="card-symbol s-club">K♣</span>)
+            </li>
+            <li><strong>Playable Draws:</strong> Three to a straight/flush if high and live.</li>
+            <li><strong>Avoid:</strong> Low unpaired cards with no draw potential.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-card guide">
+        <div class="section-header">Strategy Guide</div>
+        <div class="section-body">
+          <ul>
+            <li><strong>Memorize Up Cards:</strong> Track visible cards to assess hand strength and outs.</li>
+            <li><strong>Steal Antes:</strong> Raise with strong up cards to force folds.</li>
+            <li><strong>Beware of “Bricks”:</strong> Avoid drawing to weak straights/flushes with dead outs.</li>
+            <li><strong>Position Matters Less:</strong> Unlike Hold’em, all players see the same board, focus on hand strength and dead cards.</li>
+            <li><strong>Cap Betting:</strong> Many Stud games cap raises (e.g., 1 bet + 3 raises per round).</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    &copy; 2025 PokerHama. All rights reserved.
+  </footer>
+
+  <button id="goToTop" aria-label="Go to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="poker.js"></script>
+</body>
+</html>
