@@ -747,7 +747,7 @@ function rotateTopCta() {
 if (topCtaRotations.length > 1) setInterval(rotateTopCta, 8000);
 
 // ✅ ROTATING HEADER SUBTITLE
-const subtitleRotations = ["All Links Open in New Tab \u2022 Bookmark Us!", "\u2705 Verified Faucets \u2022 Updated Daily", "Cointapper code for May21 \u2013 Cointapper-6", "\ud83d\udee1\ufe0f Scam-Free Directory \u2022 Trusted by 50k+ Users"]; let subtitleIndex = 0; const subtitleEl = document.getElementById('headerSubtitle');
+const subtitleRotations = ["All Links Open in New Tab \u2022 Bookmark Us!", "\u2705 Verified Faucets \u2022 Updated Daily", "Cointapper code for May22 : Cointapper-6", "\ud83d\udee1\ufe0f Scam-Free Directory \u2022 Trusted by 50k+ Users"]; let subtitleIndex = 0; const subtitleEl = document.getElementById('headerSubtitle');
 function rotateSubtitle() { subtitleEl.style.opacity = '0'; setTimeout(() => { subtitleIndex = (subtitleIndex + 1) % subtitleRotations.length; subtitleEl.textContent = subtitleRotations[subtitleIndex]; subtitleEl.style.opacity = '1'; }, 250); }
 if (subtitleRotations.length > 1) setInterval(rotateSubtitle, 6000);
 
