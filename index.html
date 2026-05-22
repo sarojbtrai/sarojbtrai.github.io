@@ -345,6 +345,11 @@ body.light-mode .card-icon { background: rgba(0,0,0,0.03); }
  <h2 class="section-title" id="hourly">Hourly</h2>
  <div class="cards">
  <div class="card reveal">
+<div class="card-header"><img src="https://allfaucet.buzz/images/tron.png" alt="TRXBet" loading="lazy" style="width:36px;height:36px;border-radius:8px;object-fit:cover;"> <div class="card-name">TRXBet</div></div>
+ <ul class="card-bullets"><li>0.005 TRX+</li><li>Independent</li></ul>
+ <a href="https://trxbet.io?ref=sarojbhattarai" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit Site</a>
+ </div>
+ <div class="card reveal">
 <div class="card-header"><img src="https://allfaucet.buzz/images/tronlux.png" alt="TronLux" loading="lazy" style="width:36px;height:36px;border-radius:8px;object-fit:cover;"> <div class="card-name">TronLux</div></div>
  <ul class="card-bullets"><li>0.005 TRX+</li><li>Independent</li></ul>
  <a href="https://tronlux.io/?ref=cryptohama" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit Site</a>
@@ -355,9 +360,9 @@ body.light-mode .card-icon { background: rgba(0,0,0,0.03); }
  <a href="https://trxzilla.live/?ref=saroj" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit Site</a>
  </div>
  <div class="card reveal">
-<div class="card-header"><img src="https://allfaucet.buzz/images/tron.png" alt="TRXBet" loading="lazy" style="width:36px;height:36px;border-radius:8px;object-fit:cover;"> <div class="card-name">TRXBet</div></div>
- <ul class="card-bullets"><li>0.005 TRX+</li><li>Independent</li></ul>
- <a href="https://trxbet.io?ref=sarojbhattarai" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit Site</a>
+<div class="card-header"><img src="https://allfaucet.buzz/images/tron.png" alt="TronSpin" loading="lazy" style="width:36px;height:36px;border-radius:8px;object-fit:cover;"> <div class="card-name">TronSpin</div></div>
+ <ul class="card-bullets"><li>0.003 TRX+</li><li>Independent</li></ul>
+ <a href="https://tronspin.live/?ref=allfaucet" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit Site</a>
  </div>
  <div class="card reveal">
 <div class="card-header"><img src="https://allfaucet.buzz/images/eth.png" alt="FreeETH" loading="lazy" style="width:36px;height:36px;border-radius:8px;object-fit:cover;"> <div class="card-name">FreeETH</div></div>
@@ -738,7 +743,7 @@ themeToggle.addEventListener('click', () => {
 });
 
 // ✅ ROTATING TOP CTA
-const topCtaRotations = [{"text": "CryptoHama is now Allfaucet.buzz", "icon": "\ud83d\ude80", "link": "#top20"}]; let topCtaIndex = 0;
+const topCtaRotations = [{"text": "CryptoHama is now Allfaucet.buzz", "icon": "\ud83d\ude80", "link": "#top20"}, {"text": "New Tron Hourly Faucet \u2013 TRXSPIN", "icon": "\u26a1", "link": "https://tronspin.live/?ref=allfaucet"}, {"text": "New Ethereum Hourly Faucet \u2013 FaucetMatrix", "icon": "\u26a1", "link": "https://freeeth.in?ref=SP5eGVmzbq"}]; let topCtaIndex = 0;
 const topCtaEl = document.getElementById('topCta'), topCtaTextEl = document.getElementById('topCtaText'), topCtaIconEl = document.getElementById('topCtaIcon'), topCtaLinkEl = topCtaEl.querySelector('a');
 function rotateTopCta() {
   topCtaLinkEl.style.opacity = '0';
