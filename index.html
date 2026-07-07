@@ -252,15 +252,6 @@ body.light-mode .card-icon { background: rgba(139, 92, 246, 0.08); }
 </button>
 </header>
 <div class="main-wrapper">
-   <h2 class="section-title" id="newbtcfaucet3+satoshi">New BTC Faucet 3+ satoshi</h2>
-   <div class="cards">
-  <div class="card reveal">
-<div class="card-header"><img src="https://btclux.io/?ref=allfaucet" alt="Unnamed Faucet" loading="lazy" style="width:40px;height:40px;border-radius:10px;object-fit:cover;"><div class="card-name">Unnamed Faucet</div></div>
-<ul class="card-bullets"><li>Earn free crypto</li><li>Low withdrawal threshold</li></ul>
-<a href="#" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit Site</a>
-</div>
-   </div>
-
    <h2 class="section-title" id="top20">Top 20</h2>
    <div class="cards">
   <div class="card reveal">
@@ -880,7 +871,7 @@ function rotateSubtitle() { subtitleEl.style.opacity = '0'; setTimeout(() => { s
 if (subtitleRotations.length > 1) setInterval(rotateSubtitle, 6000);
 
 // ✅ ROTATING BOTTOM CTA
-const bottomCtaRotations = [{"text": "\ud83c\udfaf Join FaucetPay \u2013 Your Micro-Wallet for Faucets", "link": "https://faucetpay.io/?r=cryptohama"}, {"text": "\ud83d\udcb3 Get Cwallet \u2013 Multi-Coin Wallet with Faucet Support", "link": "https://cwallet.com/referralweb/qKE9A2L9?type=signup"}]; let bottomCtaIndex = 0; const bottomCtaEl = document.getElementById('bottomCta'), bottomCtaTextEl = document.getElementById('bottomCtaText'), bottomCtaLinkEl = bottomCtaEl.querySelector('a');
+const bottomCtaRotations = [{"text": "\ud83c\udfaf Join FaucetPay \u2013 Your Micro-Wallet for Faucets", "link": "https://faucetpay.io/?r=cryptohama"}, {"text": "\ud83d\udcb3 Get Cwallet \u2013 Multi-Coin Wallet with Faucet Support", "link": "https://cwallet.com/referralweb/qKE9A2L9?type=signup"}, {"text": "New BTC Faucet 3+ satoshi", "link": "https://btclux.io/?ref=allfaucet"}]; let bottomCtaIndex = 0; const bottomCtaEl = document.getElementById('bottomCta'), bottomCtaTextEl = document.getElementById('bottomCtaText'), bottomCtaLinkEl = bottomCtaEl.querySelector('a');
 function rotateBottomCta() { bottomCtaLinkEl.style.opacity = '0'; setTimeout(() => { bottomCtaIndex = (bottomCtaIndex + 1) % bottomCtaRotations.length; const i = bottomCtaRotations[bottomCtaIndex]; bottomCtaTextEl.textContent = i.text; bottomCtaLinkEl.href = i.link; bottomCtaLinkEl.style.opacity = '1'; }, 250); }
 if (bottomCtaRotations.length > 1) setInterval(rotateBottomCta, 7000);
 
