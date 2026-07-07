@@ -3,481 +3,530 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Crypto Faucets - Earn Free Bitcoin & Altcoins</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Best Hourly Faucets — Free Crypto Every Hour</title>
+    <meta name="description" content="Claim free cryptocurrency every hour. 9 verified faucets — BTC, SHIB, USDT, TRX, LTC, SOL, DOGE, TON. No signup required.">
+    <meta name="theme-color" content="#050810">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACRElEQVR4nO3W/0sacRzH8Zdzf8DH/TAYjI3GxmAQjAmBEASBkNrMtJlJUTAI2p/gz/sHBlEQbDQILEkzyxKCRhA0hI6NoAiCaDSCIO/zD7jbL95xH727z+dz9uWX3nAgyvl83H0+ygH30+Z8SVPSzvkP2jl5On1FvKj7ptNXrhEetyfOjlwSAL7GoQJQp7KP6a0A5lIX5vgjADUdMbn4RAohDfiaOm+O63fAQHxcfCqMkALMD59ZxY0lMCMmlp4LIbgATdN+AlAWUqcZm7gZwCDGll5wESKAmezwiVO8GcAg0rlXjoiHPEAueZzxOsd9nAuoAFA8Hs8nacDyh0MC/OPFHQEAlHzyKGP3oe0SrAwdEPCv3G4JLJdjcLmTCgFKiV8ycR6AQUTzbxlEC6Cc2JeNiwAYRCTvNxDMHqjEqwRaXTbO2wMtU4lX0VfoogxgK75HAFdxaUCjh2AhQA1AsBCg24O7br4LEFsCZhl6V7opYLEHdmI7BDe8B3qKPVTvWf4KdmPbsgjheHexl8I0tv8DewNbMgiheGA1yMQdAQBQjVZEEdx4V6mvJc4FAMB+dINBvFsNfQagKAObZxyAEfeXwpZxQOCZ0F8KU69WVxtHDYDyO7r+w/Se1VHTXzvFhe6APgfviwSSzwOdazHHuBQAAA7783aIlvib9QQ3Lg0AgONIzgrBxF+Xk0JxVwAAOIlkmxFG/GV5RDjuGgAAp+EFM0IFoHZsjErF2wIAwJ/Qdx2hPtscl45fy/wNfSN3Er6u+Q/Ulkio2OA36wAAAABJRU5ErkJggg==">
+    <link rel="apple-touch-icon" href="data:image/png;base64,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">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0e1a;
-            --bg-gradient: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 50%, #0f172a 100%);
-            --surface: rgba(30, 41, 59, 0.7);
-            --surface-dark: rgba(15, 23, 42, 0.8);
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: rgba(148, 163, 184, 0.2);
-            --primary: #3b82f6;
-            --primary-glow: rgba(59, 130, 246, 0.5);
+            --bg: #050810;
+            --surface: rgba(20, 28, 45, 0.55);
+            --surface-hover: rgba(30, 40, 60, 0.75);
+            --text: #f1f5f9;
+            --text-muted: #8896ab;
+            --text-dim: #5a6a80;
+            --border: rgba(120, 140, 170, 0.12);
+            --border-hover: rgba(120, 140, 170, 0.3);
+            --lux-1: #a855f7;
+            --lux-2: #e879f9;
+            --lux-3: #f472b6;
+            --easy-1: #2dd4bf;
+            --easy-2: #38bdf8;
+            --easy-3: #818cf8;
             --gold: #fbbf24;
-            --gold-glow: rgba(251, 191, 36, 0.4);
-            --lux-1: #8b5cf6;
-            --lux-2: #d946ef;
-            --lux-3: #ec4899;
-            --easy-1: #10b981;
-            --easy-2: #06b6d4;
-            --easy-3: #3b82f6;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         html, body {
-            height: 100vh;
-            height: 100dvh;
+            height: 100vh; height: 100dvh;
             overflow: hidden;
             background: var(--bg);
             color: var(--text);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
-            background: var(--bg-gradient);
-            display: flex;
-            flex-direction: column;
-            padding: 15px;
-            gap: 12px;
-            max-width: 1400px;
-            margin: 0 auto;
+            display: flex; flex-direction: column;
+            padding: 10px; gap: 6px;
+            max-width: 1400px; margin: 0 auto;
             position: relative;
+            background: radial-gradient(ellipse at 20% 0%, rgba(168,85,247,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 100%, rgba(56,189,248,0.08) 0%, transparent 50%),
+                        var(--bg);
         }
 
-        /* Animated background orbs */
-        body::before, body::after {
-            content: '';
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.3;
-            z-index: 0;
-            pointer-events: none;
-            animation: float 20s ease-in-out infinite;
+        #particles {
+            position: fixed; inset: 0;
+            z-index: 0; pointer-events: none;
         }
 
-        body::before {
-            width: 400px;
-            height: 400px;
-            background: var(--lux-1);
-            top: -100px;
-            left: -100px;
+        .grain {
+            position: fixed; inset: 0; z-index: 1;
+            pointer-events: none; opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
         }
 
-        body::after {
-            width: 500px;
-            height: 500px;
-            background: var(--easy-2);
-            bottom: -150px;
-            right: -150px;
-            animation-delay: -10s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(50px, 50px) scale(1.1); }
-        }
-
-        /* Notice Bar */
-        .note {
-            flex-shrink: 0;
+        /* Banner */
+        .banner {
+            flex-shrink: 0; z-index: 2;
+            background: linear-gradient(90deg, rgba(251,191,36,0.1), rgba(251,191,36,0.04), rgba(251,191,36,0.1));
+            border: 1px solid rgba(251,191,36,0.2);
+            border-radius: 12px;
+            padding: 10px 16px;
             text-align: center;
-            background: rgba(59, 130, 246, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            color: #93c5fd;
-            padding: 10px;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            line-height: 1.4;
-            position: relative;
-            z-index: 1;
-            animation: slideDown 0.6s ease-out;
+            font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 0.3px;
+            animation: fadeIn 0.5s ease-out, bannerGlow 3s ease-in-out infinite;
+            position: relative; overflow: hidden;
         }
 
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-20px); }
+        .banner::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(251,191,36,0.12), transparent);
+            animation: shimmerSlide 2.5s infinite;
+        }
+
+        @keyframes shimmerSlide {
+            0% { left: -100%; } 50% { left: 100%; } 100% { left: 100%; }
+        }
+
+        @keyframes bannerGlow {
+            0%, 100% { border-color: rgba(251,191,36,0.2); box-shadow: 0 0 0 rgba(251,191,36,0); }
+            50% { border-color: rgba(251,191,36,0.4); box-shadow: 0 0 20px rgba(251,191,36,0.08); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         /* Sections */
         .section {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            min-height: 0;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 0.8s ease-out;
+            flex: 1; display: flex; flex-direction: column;
+            gap: 6px; min-height: 0; z-index: 2;
         }
 
-        .section:nth-child(2) { animation-delay: 0.2s; }
-        .section:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .section:nth-child(2) { animation: fadeIn 0.6s ease-out 0.15s both; }
+        .section:nth-child(3) { animation: fadeIn 0.6s ease-out 0.3s both; }
 
         .section-header {
             flex-shrink: 0;
-            font-size: 1rem;
-            font-weight: 800;
-            text-align: center;
-            color: var(--text);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            position: relative;
-            padding: 8px 0;
+            display: flex; align-items: center; justify-content: center;
+            gap: 12px; padding: 3px 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(0.78rem, 1.3vw, 1.1rem);
+            font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2.5px;
         }
 
         .section-header.lux {
-            background: linear-gradient(90deg, var(--lux-1), var(--lux-2), var(--lux-3));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--lux-2);
+            text-shadow: 0 0 20px rgba(232,121,249,0.3);
         }
 
         .section-header.easy {
-            background: linear-gradient(90deg, var(--easy-1), var(--easy-2), var(--easy-3));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--easy-2);
+            text-shadow: 0 0 20px rgba(56,189,248,0.3);
         }
 
-        /* Grid Layouts */
+        .section-header::before, .section-header::after {
+            content: ''; width: clamp(25px, 4vw, 50px); height: 2px; border-radius: 1px;
+        }
+
+        .section-header.lux::before { background: linear-gradient(90deg, transparent, var(--lux-1)); }
+        .section-header.lux::after { background: linear-gradient(90deg, var(--lux-1), transparent); }
+        .section-header.easy::before { background: linear-gradient(90deg, transparent, var(--easy-1)); }
+        .section-header.easy::after { background: linear-gradient(90deg, var(--easy-1), transparent); }
+
+        /* Grids */
         .grid {
-            flex: 1;
-            display: grid;
-            gap: 12px;
-            min-height: 0;
+            flex: 1; display: grid; gap: clamp(7px, 1vw, 14px); min-height: 0;
         }
 
-        /* Desktop: 4 columns for Lux, 5 columns for Easy */
-        .lux-grid {
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 1fr;
-        }
+        .lux-grid { grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr; }
+        .easy-grid { grid-template-columns: repeat(5, 1fr); grid-template-rows: 1fr; }
 
-        .easy-grid {
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: 1fr;
-        }
-
-        /* Faucet Tiles */
+        /* Tiles */
         .tile {
             background: var(--surface);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: var(--text);
+            border-radius: clamp(10px, 1.2vw, 16px);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-decoration: none; color: var(--text);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            min-height: 0;
-            padding: 15px 10px;
-            gap: 8px;
+            position: relative; overflow: hidden;
+            padding: clamp(8px, 1.2vw, 16px) clamp(5px, 0.8vw, 12px);
+            gap: clamp(4px, 0.6vw, 8px);
+            cursor: pointer;
         }
 
-        /* Shimmer effect */
         .tile::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.6s;
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.06), transparent 70%);
+            opacity: 0; transition: opacity 0.3s ease;
         }
 
-        .tile:hover::before {
-            left: 100%;
+        .tile:hover::before { opacity: 1; }
+
+        .tile::after {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+            transition: left 0.6s ease;
         }
+
+        .tile:hover::after { left: 150%; }
 
         .tile:hover {
-            transform: translateY(-5px) scale(1.02);
-            border-color: var(--primary);
-            box-shadow: 0 10px 40px var(--primary-glow), 0 0 20px rgba(139, 92, 246, 0.3);
-            z-index: 10;
+            transform: translateY(-3px) scale(1.02);
+            border-color: var(--border-hover);
+            background: var(--surface-hover);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
         }
 
         .tile.lux-tile:hover {
-            border-color: var(--lux-2);
-            box-shadow: 0 10px 40px rgba(217, 70, 239, 0.4), 0 0 30px rgba(139, 92, 246, 0.3);
+            border-color: rgba(232,121,249,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(168,85,247,0.12);
         }
 
         .tile.easy-tile:hover {
-            border-color: var(--easy-2);
-            box-shadow: 0 10px 40px rgba(6, 182, 212, 0.4), 0 0 30px rgba(16, 185, 129, 0.3);
+            border-color: rgba(56,189,248,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(56,189,248,0.12);
         }
+
+        .tile:active { transform: translateY(-1px) scale(1.01); transition-duration: 0.08s; }
 
         .tile-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: white;
-            flex-shrink: 0;
-            position: relative;
-            transition: transform 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            width: clamp(34px, 4vw, 52px);
+            height: clamp(34px, 4vw, 52px);
+            border-radius: clamp(8px, 0.9vw, 12px);
+            display: flex; align-items: center; justify-content: center;
+            font-size: clamp(1rem, 1.8vw, 1.6rem);
+            font-weight: 900; color: white;
+            flex-shrink: 0; position: relative;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        .tile:hover .tile-icon {
-            transform: scale(1.1) rotate(5deg);
+        .tile:hover .tile-icon { transform: scale(1.15) rotate(6deg); }
+
+        .tile-icon.lux {
+            background: linear-gradient(135deg, var(--lux-1), var(--lux-2));
+            box-shadow: 0 4px 16px rgba(168,85,247,0.35);
         }
 
-        .tile-icon.lux { 
-            background: linear-gradient(135deg, var(--lux-1), var(--lux-2), var(--lux-3));
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        .tile-icon.easy {
+            background: linear-gradient(135deg, var(--easy-1), var(--easy-2));
+            box-shadow: 0 4px 16px rgba(45,212,191,0.35);
         }
-        
-        .tile-icon.easy { 
-            background: linear-gradient(135deg, var(--easy-1), var(--easy-2), var(--easy-3));
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+
+        .tile-icon::after {
+            content: ''; position: absolute; inset: 1px;
+            border-radius: clamp(7px, 0.8vw, 11px);
+            background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent 60%);
+            pointer-events: none;
         }
 
         .tile-title {
-            font-size: 0.95rem;
+            font-size: clamp(0.78rem, 1.2vw, 1.05rem);
             font-weight: 700;
-            text-align: center;
+            text-align: center; line-height: 1.2;
         }
 
-        .tile-earning {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 0.75rem;
-            color: var(--gold);
+        .tile-badge {
+            display: inline-flex; align-items: center; gap: 3px;
+            font-size: clamp(0.6rem, 0.9vw, 0.8rem);
             font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background: rgba(251, 191, 36, 0.1);
-            padding: 4px 10px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            padding: clamp(2px, 0.4vw, 4px) clamp(6px, 0.8vw, 10px);
             border-radius: 20px;
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            animation: pulse 2s ease-in-out infinite;
+            white-space: nowrap;
         }
 
-        @keyframes pulse {
+        .tile-badge.lux {
+            color: var(--lux-2);
+            background: rgba(168,85,247,0.1);
+            border: 1px solid rgba(168,85,247,0.2);
+            animation: badgePulse 2.5s ease-in-out infinite;
+        }
+
+        .tile-badge.easy {
+            color: var(--easy-2);
+            background: rgba(56,189,248,0.1);
+            border: 1px solid rgba(56,189,248,0.2);
+            animation: badgePulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
             0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
+            50% { opacity: 0.85; transform: scale(1.04); }
         }
 
-        /* More Earning Sites Button */
-        .more-sites-btn {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 30px;
-            background: linear-gradient(135deg, var(--gold), #f59e0b, #d97706);
-            color: #0f172a;
-            font-size: 1rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px var(--gold-glow);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .more-sites-btn::before {
-            content: '';
+        .tile .ext {
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            top: clamp(4px, 0.6vw, 8px);
+            right: clamp(4px, 0.6vw, 8px);
+            font-size: clamp(0.5rem, 0.7vw, 0.7rem);
+            color: var(--text-dim);
+            opacity: 0; transition: all 0.25s ease;
+            transform: translate(-2px, 2px);
+        }
+
+        .tile:hover .ext { opacity: 1; transform: translate(0, 0); }
+
+        /* CTA Button */
+        .cta-btn {
+            flex-shrink: 0; z-index: 2;
+            display: flex; align-items: center; justify-content: center;
+            gap: 8px;
+            padding: clamp(9px, 1.2vw, 14px) clamp(18px, 2.5vw, 32px);
+            background: linear-gradient(135deg, var(--gold), #f59e0b);
+            color: #0f172a;
+            font-size: clamp(0.78rem, 1.1vw, 1rem);
+            font-weight: 900; text-transform: uppercase;
+            letter-spacing: 1px; text-decoration: none;
+            border-radius: clamp(10px, 1vw, 14px);
+            border: none; cursor: pointer;
+            box-shadow: 0 4px 20px rgba(251,191,36,0.25);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative; overflow: hidden;
+            animation: fadeIn 0.7s ease-out 0.45s both;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cta-btn::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            animation: shimmer 3s infinite;
+            animation: ctaShimmer 2.5s infinite;
         }
 
-        @keyframes shimmer {
-            to { left: 100%; }
+        @keyframes ctaShimmer {
+            0% { left: -100%; } 60% { left: 100%; } 100% { left: 100%; }
         }
 
-        .more-sites-btn:hover {
+        .cta-btn:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 40px var(--gold-glow);
+            box-shadow: 0 8px 30px rgba(251,191,36,0.35), 0 0 15px rgba(251,191,36,0.15);
         }
 
-        /* Mobile: 2 columns for both */
+        .cta-btn:active { transform: translateY(-1px) scale(1.01); }
+
+        /* Mobile */
         @media (max-width: 768px) {
-            body {
-                padding: 12px;
-                gap: 10px;
-            }
-
-            .note {
-                font-size: 0.75rem;
-                padding: 8px;
-            }
-
-            .section-header {
-                font-size: 0.9rem;
-            }
-
-            .grid {
-                gap: 10px;
-            }
-
-            .lux-grid, .easy-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(2, 1fr);
-            }
-
-            .easy-grid {
-                grid-template-rows: repeat(3, 1fr);
-            }
-
-            /* Center the last item in Easy grid on mobile */
-            .easy-grid .tile:last-child {
-                grid-column: 1 / -1;
-                max-width: 50%;
-                justify-self: center;
-            }
-
-            .tile {
-                padding: 12px 8px;
-                gap: 6px;
-            }
-
-            .tile-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1.3rem;
-            }
-
-            .tile-title {
-                font-size: 0.85rem;
-            }
-
-            .tile-earning {
-                font-size: 0.7rem;
-                padding: 3px 8px;
-            }
-
-            .more-sites-btn {
-                padding: 12px 20px;
-                font-size: 0.9rem;
-            }
+            body { padding: 8px; gap: 5px; }
+            .banner { padding: 8px 12px; }
+            .section-header { gap: 8px; letter-spacing: 1.5px; padding: 2px 0; }
+            .section-header::before, .section-header::after { width: 20px; }
+            .lux-grid, .easy-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
+            .easy-grid { grid-template-rows: repeat(3, 1fr); }
+            .easy-grid .tile:last-child { grid-column: 1 / -1; max-width: 50%; justify-self: center; }
+            .tile { border-radius: 12px; }
+            .tile-icon { border-radius: 8px; }
+            .tile-icon::after { border-radius: 7px; }
         }
 
-        /* Very small screens */
-        @media (max-height: 600px) {
-            body { padding: 8px; gap: 8px; }
-            .note { font-size: 0.7rem; padding: 6px; }
-            .section-header { font-size: 0.8rem; padding: 6px 0; }
-            .tile-icon { width: 36px; height: 36px; font-size: 1.1rem; }
-            .tile-title { font-size: 0.8rem; }
-            .tile-earning { font-size: 0.65rem; }
-            .more-sites-btn { padding: 10px 16px; font-size: 0.85rem; }
+        @media (max-height: 650px) {
+            body { padding: 6px; gap: 4px; }
+            .banner { padding: 6px 10px; }
+            .section-header { padding: 1px 0; gap: 6px; }
+            .section-header::before, .section-header::after { width: 16px; }
+            .tile { border-radius: 10px; }
+            .tile-icon { border-radius: 6px; }
+            .tile-icon::after { border-radius: 5px; }
         }
 
-        /* Tablet: 3 columns */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .lux-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            .easy-grid {
-                grid-template-columns: repeat(5, 1fr);
+        @media (min-width: 1200px) {
+            body { padding: 14px; gap: 8px; }
+        }
+
+        @media (min-width: 1600px) {
+            body { max-width: 1600px; padding: 18px; gap: 10px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
+<base target="_blank">
 </head>
 <body>
 
-    <div class="note">
-        🔗 Note: All links below open in a new tab so you never lose your place!
+    <canvas id="particles"></canvas>
+    <div class="grain"></div>
+
+    <div class="banner">
+        🔥 Best Hourly Faucets — All links opens in new tab
     </div>
 
     <div class="section">
-        <div class="section-header lux">💎 LUX GROUP FAUCETS</div>
+        <div class="section-header lux">💎 LUX GROUP</div>
         <div class="grid lux-grid">
-            <a href="https://btclux.io/?ref=allfaucet" target="_blank" rel="noopener noreferrer" class="tile lux-tile">
+            <a href="https://btclux.io/?ref=allfaucet" target="_blank" rel="noopener noreferrer" class="tile lux-tile" aria-label="BTC Lux">
+                <span class="ext">↗</span>
                 <div class="tile-icon lux">₿</div>
                 <div class="tile-title">BTC Lux</div>
-                <div class="tile-earning">💰 Earn BTC</div>
+                <div class="tile-badge lux">Free BTC</div>
             </a>
-            <a href="https://shibalux.io/?ref=allfaucet" target="_blank" rel="noopener noreferrer" class="tile lux-tile">
+            <a href="https://shibalux.io/?ref=allfaucet" target="_blank" rel="noopener noreferrer" class="tile lux-tile" aria-label="Shiba Lux">
+                <span class="ext">↗</span>
                 <div class="tile-icon lux">S</div>
                 <div class="tile-title">Shiba Lux</div>
-                <div class="tile-earning">💰 Earn SHIB</div>
+                <div class="tile-badge lux">Free SHIB</div>
             </a>
-            <a href="https://usdtlux.io/?ref=allfaucet" target="_blank" rel="noopener noreferrer" class="tile lux-tile">
+            <a href="https://usdtlux.io/?ref=allfaucet" target="_blank" rel="noopener noreferrer" class="tile lux-tile" aria-label="USDT Lux">
+                <span class="ext">↗</span>
                 <div class="tile-icon lux">₮</div>
                 <div class="tile-title">USDT Lux</div>
-                <div class="tile-earning">💰 Earn USDT</div>
+                <div class="tile-badge lux">Free USDT</div>
             </a>
-            <a href="https://tronlux.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="tile lux-tile">
+            <a href="https://tronlux.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="tile lux-tile" aria-label="TRON Lux">
+                <span class="ext">↗</span>
                 <div class="tile-icon lux">T</div>
                 <div class="tile-title">TRON Lux</div>
-                <div class="tile-earning">💰 Earn TRX</div>
+                <div class="tile-badge lux">Free TRX</div>
             </a>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-header easy">🚀 EASY GROUP FAUCETS</div>
+        <div class="section-header easy">🚀 EASY GROUP</div>
         <div class="grid easy-grid">
-            <a href="https://easylite.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="tile easy-tile">
+            <a href="https://easylite.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="tile easy-tile" aria-label="Easy Lite">
+                <span class="ext">↗</span>
                 <div class="tile-icon easy">Ł</div>
                 <div class="tile-title">Easy Lite</div>
-                <div class="tile-earning">💰 Earn LTC</div>
+                <div class="tile-badge easy">Free LTC</div>
             </a>
-            <a href="https://easysolana.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="tile easy-tile">
+            <a href="https://easysolana.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="tile easy-tile" aria-label="Easy Solana">
+                <span class="ext">↗</span>
                 <div class="tile-icon easy">◎</div>
                 <div class="tile-title">Easy Solana</div>
-                <div class="tile-earning">💰 Earn SOL</div>
+                <div class="tile-badge easy">Free SOL</div>
             </a>
-            <a href="https://easydoge.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="tile easy-tile">
+            <a href="https://easydoge.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="tile easy-tile" aria-label="Easy Doge">
+                <span class="ext">↗</span>
                 <div class="tile-icon easy">Ð</div>
                 <div class="tile-title">Easy Doge</div>
-                <div class="tile-earning">💰 Earn DOGE</div>
+                <div class="tile-badge easy">Free DOGE</div>
             </a>
-            <a href="https://easytrx.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="tile easy-tile">
+            <a href="https://easytrx.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="tile easy-tile" aria-label="Easy TRX">
+                <span class="ext">↗</span>
                 <div class="tile-icon easy">T</div>
                 <div class="tile-title">Easy TRX</div>
-                <div class="tile-earning">💰 Earn TRX</div>
+                <div class="tile-badge easy">Free TRX</div>
             </a>
-            <a href="https://easyton.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="tile easy-tile">
+            <a href="https://easyton.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="tile easy-tile" aria-label="Easy TON">
+                <span class="ext">↗</span>
                 <div class="tile-icon easy">💎</div>
                 <div class="tile-title">Easy TON</div>
-                <div class="tile-earning">💰 Earn TON</div>
+                <div class="tile-badge easy">Free TON</div>
             </a>
         </div>
     </div>
 
-    <a href="https://allfaucet.buzz" target="_blank" rel="noopener noreferrer" class="more-sites-btn">
-        🌐 More Earning Sites
+    <a href="https://allfaucet.buzz" target="_blank" rel="noopener noreferrer" class="cta-btn">
+        <span>🌐</span>
+        <span>Discover More Faucets</span>
     </a>
+
+    <script>
+        (function() {
+            const canvas = document.getElementById('particles');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let animationId;
+            let isActive = true;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            function createParticle() {
+                return {
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.3,
+                    vy: (Math.random() - 0.5) * 0.3,
+                    radius: Math.random() * 1.5 + 0.5,
+                    opacity: Math.random() * 0.4 + 0.1,
+                    color: Math.random() > 0.5 ? '168, 85, 247' : '56, 189, 248'
+                };
+            }
+
+            function init() {
+                resize();
+                const count = window.innerWidth < 768 ? 25 : 45;
+                particles = [];
+                for (let i = 0; i < count; i++) {
+                    particles.push(createParticle());
+                }
+            }
+
+            function draw() {
+                if (!isActive) return;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                particles.forEach((p, i) => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0) p.x = canvas.width;
+                    if (p.x > canvas.width) p.x = 0;
+                    if (p.y < 0) p.y = canvas.height;
+                    if (p.y > canvas.height) p.y = 0;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${p.color}, ${p.opacity})`;
+                    ctx.fill();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dx = p.x - p2.x;
+                        const dy = p.y - p2.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 120) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = `rgba(${p.color}, ${0.06 * (1 - dist / 120)})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                });
+
+                animationId = requestAnimationFrame(draw);
+            }
+
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    isActive = false;
+                    cancelAnimationFrame(animationId);
+                } else {
+                    isActive = true;
+                    draw();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                resize();
+                init();
+            });
+
+            init();
+            draw();
+        })();
+    </script>
 
 </body>
 </html>
