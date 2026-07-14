@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best 4 Crypto Faucets – Ad</title>
+    <style>
+        /* ───── RESET ───── */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background: #0b0e1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* ───── AD CONTAINER – no padding, no margins ───── */
+        .ad {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            width: 100%;
+            max-width: 1200px;
+            aspect-ratio: 2 / 1;
+            background: #0b0e1a;
+            gap: 0;
+            /* no gaps – images touch */;
+        }
+
+        /* ───── EACH PANEL – now clickable <a> ───── */
+        .panel {
+            position: relative;
+            overflow: hidden;
+            background: #0f1629;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .panel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .panel:hover img {
+            transform: scale(1.03);
+        }
+
+        /* ───── TEXT OVERLAY – larger, semi-transparent solid bg ───── */
+        .panel .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 20px 24px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(3px);
+            color: #f0f4ff;
+            pointer-events: none;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .panel .overlay .name {
+            font-weight: 700;
+            font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+
+        .panel .overlay .name .gold {
+            color: #f7c948;
+        }
+
+        .panel .overlay .detail {
+            font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 0.02em;
+            line-height: 1.4;
+        }
+
+        .panel .overlay .detail strong {
+            color: #f7c948;
+            font-weight: 600;
+        }
+
+        /* ───── RESPONSIVE: stack vertically on mobile ───── */
+        @media (max-width: 640px) {
+            .ad {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+                aspect-ratio: auto;
+                height: 100vh;
+                max-height: 900px;
+                width: 100%;
+            }
+
+            .panel .overlay {
+                padding: 24px 20px 28px;
+            }
+
+            .panel .overlay .name {
+                font-size: clamp(1.5rem, 6vw, 2.5rem);
+            }
+
+            .panel .overlay .detail {
+                font-size: clamp(1rem, 3vw, 1.4rem);
+            }
+        }
+
+        @media (max-width: 400px) {
+            .panel .overlay {
+                padding: 16px 14px 20px;
+            }
+            .panel .overlay .name {
+                font-size: clamp(1.2rem, 5vw, 1.6rem);
+            }
+            .panel .overlay .detail {
+                font-size: clamp(0.75rem, 2.5vw, 1rem);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ─── AD: 4 CLICKABLE PANELS JOINED ─── -->
+    <div class="ad">
+
+        <!-- 1. Earnbitsun -->
+        <a href="https://earnbitsun.club?ref=NQJTQYSZ" target="_blank" rel="noopener noreferrer" class="panel">
+            <img
+            src="https://earnbitsun.club/_next/image?url=%2Fhome%2Flogo.gif&w=1920&q=75"
+            alt="Earnbitsun"
+            loading="lazy"
+            />
+            <div class="overlay">
+                <div class="name">Earnbitsun</div>
+                <div class="detail">Rewards &amp; design like Earnbitmoon &bull; <strong>$0.0005+</strong> every 5 mins</div>
+            </div>
+        </a>
+
+        <!-- 2. Freeltc -->
+        <a href="https://freeltc.online/?r=11400" target="_blank" rel="noopener noreferrer" class="panel">
+            <img
+            src="https://freeltc.online/assets/images/logo.png"
+            alt="Freeltc"
+            loading="lazy"
+            />
+            <div class="overlay">
+                <div class="name">Freeltc</div>
+                <div class="detail"><strong>$0.0005+</strong> every 4 mins</div>
+            </div>
+        </a>
+
+        <!-- 3. Viefaucet (using new image) -->
+        <a href="https://viefaucet.com?r=61e83d585cc8356fa4bda9a9" target="_blank" rel="noopener noreferrer" class="panel">
+            <img
+            src="https://allfaucet.buzz/images/vie.png"
+            alt="Viefaucet"
+            loading="lazy"
+            />
+            <div class="overlay">
+                <div class="name">Viefaucet</div>
+                <div class="detail"><strong>$0.00065</strong> every 4 mins</div>
+            </div>
+        </a>
+
+        <!-- 4. Cointapper -->
+        <a href="https://cointapper.io/?r=998" target="_blank" rel="noopener noreferrer" class="panel">
+            <img
+            src="https://cointapper.io/assets/images/logo.png"
+            alt="Cointapper"
+            loading="lazy"
+            />
+            <div class="overlay">
+                <div class="name">Cointapper</div>
+                <div class="detail"><strong>$0.0006+</strong> every 4 mins</div>
+            </div>
+        </a>
+
+    </div>
+
+</body>
+</html>
