@@ -31,14 +31,13 @@
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             width: 100%;
-            max-width: 1200px;
+            max-width: 1024px;
             aspect-ratio: 2 / 1;
             background: #0b0e1a;
             gap: 0;
-            /* no gaps – images touch */;
         }
 
-        /* ───── EACH PANEL – now clickable <a> ───── */
+        /* ───── EACH PANEL – clickable <a> ───── */
         .panel {
             position: relative;
             overflow: hidden;
@@ -64,26 +63,25 @@
             transform: scale(1.03);
         }
 
-        /* ───── TEXT OVERLAY – larger, semi-transparent solid bg ───── */
+        /* ───── TEXT OVERLAY – tighter, semi-transparent ───── */
         .panel .overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 20px 20px 24px;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(3px);
+            padding: 8px 16px 14px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(2px);
             color: #f0f4ff;
             pointer-events: none;
             text-align: center;
-            transition: background 0.3s ease;
         }
 
         .panel .overlay .name {
             font-weight: 700;
-            font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+            font-size: clamp(1rem, 2vw, 1.8rem);
             letter-spacing: -0.02em;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
             color: #fff;
         }
 
@@ -92,7 +90,7 @@
         }
 
         .panel .overlay .detail {
-            font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+            font-size: clamp(0.65rem, 1vw, 1rem);
             font-weight: 400;
             color: rgba(255, 255, 255, 0.85);
             letter-spacing: 0.02em;
@@ -110,33 +108,39 @@
                 grid-template-columns: 1fr;
                 grid-template-rows: repeat(4, 1fr);
                 aspect-ratio: auto;
-                height: 100vh;
-                max-height: 900px;
+                max-height: 80vh;
+                min-height: 420px;
                 width: 100%;
+                gap: 2px;
+                /* tiny gap to separate panels on mobile */;
             }
 
             .panel .overlay {
-                padding: 24px 20px 28px;
+                padding: 6px 12px 12px;
             }
 
             .panel .overlay .name {
-                font-size: clamp(1.5rem, 6vw, 2.5rem);
+                font-size: clamp(1rem, 4vw, 1.4rem);
             }
 
             .panel .overlay .detail {
-                font-size: clamp(1rem, 3vw, 1.4rem);
+                font-size: clamp(0.65rem, 2vw, 0.9rem);
             }
         }
 
         @media (max-width: 400px) {
+            .ad {
+                max-height: 70vh;
+                min-height: 320px;
+            }
             .panel .overlay {
-                padding: 16px 14px 20px;
+                padding: 4px 10px 10px;
             }
             .panel .overlay .name {
-                font-size: clamp(1.2rem, 5vw, 1.6rem);
+                font-size: clamp(0.9rem, 3.5vw, 1.2rem);
             }
             .panel .overlay .detail {
-                font-size: clamp(0.75rem, 2.5vw, 1rem);
+                font-size: clamp(0.55rem, 1.8vw, 0.7rem);
             }
         }
     </style>
@@ -172,7 +176,7 @@
             </div>
         </a>
 
-        <!-- 3. Viefaucet (using new image) -->
+        <!-- 3. Viefaucet -->
         <a href="https://viefaucet.com?r=61e83d585cc8356fa4bda9a9" target="_blank" rel="noopener noreferrer" class="panel">
             <img
             src="https://allfaucet.buzz/images/vie.png"
