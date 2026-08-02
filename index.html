@@ -305,14 +305,14 @@ body.light-mode .back-to-top {
  <a href="https://earnbitsun.club?ref=NQJTQYSZ" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit & Earn</a>
 </div>
    <div class="card reveal">
+ <div class="card-header"><img src="https://allfaucet.buzz/images/trx.png" alt="DropTRX" loading="lazy" style="width:36px;height:36px;border-radius:8px;object-fit:cover;border: 2px solid var(--card-border);"> <div class="card-name">DropTRX</div> </div>
+ <ul class="card-bullets"> <li>0.002+ TRX</li> <li>Claim every hour</li> </ul>
+ <a href="https://droptrx.io/?ref=Saroj_Bhattarai" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit & Earn</a>
+</div>
+   <div class="card reveal">
  <div class="card-header"><img src="https://allfaucet.buzz/images/bnb.png" alt="DropBNB" loading="lazy" style="width:36px;height:36px;border-radius:8px;object-fit:cover;border: 2px solid var(--card-border);"> <div class="card-name">DropBNB</div> </div>
  <ul class="card-bullets"> <li>100 BNB sats+</li> <li>Claim every hour</li> </ul>
  <a href="https://dropbnb.io/?ref=Saroj_Bhattarai" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit & Earn</a>
-</div>
-   <div class="card reveal">
- <div class="card-header"><img src="https://allfaucet.buzz/images/ltc.png" alt="LTC Maker" loading="lazy" style="width:36px;height:36px;border-radius:8px;object-fit:cover;border: 2px solid var(--card-border);"> <div class="card-name">LTC Maker</div> </div>
- <ul class="card-bullets"> <li>250 sats+ LTC</li> <li>Claim every hour</li> </ul>
- <a href="https://ltcmaker.co/?ref=420" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit & Earn</a>
 </div>
    <div class="card reveal">
  <div class="card-header"><img src="https://allfaucet.buzz/images/ton.png" alt="TONZilla" loading="lazy" style="width:36px;height:36px;border-radius:8px;object-fit:cover;border: 2px solid var(--card-border);"> <div class="card-name">TONZilla</div> </div>
@@ -643,8 +643,13 @@ body.light-mode .back-to-top {
 </div>
    <div class="card reveal">
  <div class="card-header"><img src="https://allfaucet.buzz/images/bnb.png" alt="DropBNB" loading="lazy" style="width:36px;height:36px;border-radius:8px;object-fit:cover;border: 2px solid var(--card-border);"> <div class="card-name">DropBNB</div> </div>
- <ul class="card-bullets"> <li>100 BNB sats+</li> <li>Independent</li> </ul>
+ <ul class="card-bullets"> <li>100 BNB sats+</li> <li>Drop Group</li> </ul>
  <a href="https://dropbnb.io/?ref=Saroj_Bhattarai" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit & Earn</a>
+</div>
+   <div class="card reveal">
+ <div class="card-header"><img src="https://allfaucet.buzz/images/trx.png" alt="DropTRX" loading="lazy" style="width:36px;height:36px;border-radius:8px;object-fit:cover;border: 2px solid var(--card-border);"> <div class="card-name">DropTRX</div> </div>
+ <ul class="card-bullets"> <li>0.002+ TRX</li> <li>Drop Group</li> </ul>
+ <a href="https://droptrx.io/?ref=Saroj_Bhattarai" class="visit-btn" target="_blank" rel="noopener noreferrer">Visit & Earn</a>
 </div>
    <div class="card reveal">
  <div class="card-header"><img src="https://allfaucet.buzz/images/sui.png" alt="SuiKong" loading="lazy" style="width:36px;height:36px;border-radius:8px;object-fit:cover;border: 2px solid var(--card-border);"> <div class="card-name">SuiKong</div> </div>
@@ -971,7 +976,7 @@ function rotateSubtitle() { subtitleEl.style.opacity = '0'; setTimeout(() => { s
 if (subtitleRotations.length > 1) setInterval(rotateSubtitle, 6000);
 
 // ✅ ROTATING BOTTOM CTA
-const bottomCtaRotations = [{"text": "\ud83c\udfaf Join FaucetPay \u2013 Your Micro-Wallet for Faucets", "link": "https://faucetpay.io/?r=cryptohama"}, {"text": "\ud83d\udcb3 Get Cwallet \u2013 Multi-Coin Wallet with Faucet Support", "link": "https://cwallet.com/referralweb/qKE9A2L9?type=signup"}, {"text": "New Faucet High Paying", "link": "https://earnbitsun.club?ref=NQJTQYSZ"}, {"text": "New Hourly LTC Faucet", "link": "https://ltcmaker.co/?ref=420"}]; let bottomCtaIndex = 0; const bottomCtaEl = document.getElementById('bottomCta'), bottomCtaTextEl = document.getElementById('bottomCtaText'), bottomCtaLinkEl = bottomCtaEl.querySelector('a');
+const bottomCtaRotations = [{"text": "\ud83c\udfaf Join FaucetPay \u2013 Your Micro-Wallet for Faucets", "link": "https://faucetpay.io/?r=cryptohama"}, {"text": "\ud83d\udcb3 Get Cwallet \u2013 Multi-Coin Wallet with Faucet Support", "link": "https://cwallet.com/referralweb/qKE9A2L9?type=signup"}, {"text": "New Faucet High Paying", "link": "https://earnbitsun.club?ref=NQJTQYSZ"}]; let bottomCtaIndex = 0; const bottomCtaEl = document.getElementById('bottomCta'), bottomCtaTextEl = document.getElementById('bottomCtaText'), bottomCtaLinkEl = bottomCtaEl.querySelector('a');
 function rotateBottomCta() { bottomCtaLinkEl.style.opacity = '0'; setTimeout(() => { bottomCtaIndex = (bottomCtaIndex + 1) % bottomCtaRotations.length; const i = bottomCtaRotations[bottomCtaIndex]; bottomCtaTextEl.textContent = i.text; bottomCtaLinkEl.href = i.link; bottomCtaLinkEl.style.opacity = '1'; }, 250); }
 if (bottomCtaRotations.length > 1) setInterval(rotateBottomCta, 7000);
 
