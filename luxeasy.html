@@ -1,426 +1,1029 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Hourly Faucets — Free Crypto Every Hour</title>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-50N8ELQ3GG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-50N8ELQ3GG');
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Hourly Crypto Faucets | High Payouts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0b0f19;
+    --bg-card: #151b2b;
+    --bg-card-hover: #1a2236;
+    --border-color: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --accent-green: #10b981;
+    --accent-blue: #3b82f6;
+    --accent-gold: #f59e0b;
+    --glow-drop: rgba(59, 130, 246, 0.15);
+    --glow-lux: rgba(245, 158, 11, 0.15);
+    --glow-matrix: rgba(139, 92, 246, 0.15);
+    --glow-pick: rgba(236, 72, 153, 0.15);
+  }
 
-    <style>
-        :root {
-            --bg-color: #f0f4f8;
-            --text-color: #1a202c;
-            --card-bg: #ffffff;
-            --primary-blue: #3182ce;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color: #1a202c;
-                --text-color: #f7fafc;
-                --card-bg: #2d3748;
-                --primary-blue: #63b3ed;
-            }
-        }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 85% 30%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
 
-        h1 {
-            text-align: center;
-            background: linear-gradient(90deg, #ff8a00, #e52e71, #9c27b0, #3182ce);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-        }
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
 
-        .subtitle {
-            text-align: center;
-            color: var(--text-color);
-            opacity: 0.8;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    color: var(--accent-green);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+  }
 
-        .group-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin: 2.5rem 0 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            width: 100%;
-            max-width: 900px;
-            padding-left: 0.5rem;
-            border-left: 4px solid var(--primary-blue);
-        }
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--accent-green);
+    animation: pulse 2s infinite;
+  }
 
-        .lux-group { color: #f6ad55; border-color: #f6ad55; }
-        .easy-group { color: #68d391; border-color: #68d391; }
-        .matrix-group { color: #9f7aea; border-color: #9f7aea; }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.9); }
+  }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            width: 100%;
-            max-width: 900px;
-        }
+  h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 1.25rem;
-            box-shadow: var(--shadow);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            color: var(--text-color);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
+  .tagline {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    max-width: 500px;
+    margin: 0 auto;
+  }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--accent-color, var(--primary-blue));
-        }
+  .tagline span {
+    color: var(--accent-green);
+    font-weight: 700;
+  }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent-color, var(--primary-blue));
-        }
+  /* Group Sections */
+  .group {
+    margin-bottom: 36px;
+  }
 
-        .card img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: contain;
-            background: #fff;
-            padding: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            flex-shrink: 0;
-        }
+  .group-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-left: 4px;
+  }
 
-        .card-content {
-            flex: 1;
-        }
+  .group-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
 
-        .card-title {
-            font-weight: bold;
-            font-size: 1.15rem;
-            margin-bottom: 0.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+  .drop-icon { 
+    background: linear-gradient(135deg, #3b82f6, #6366f1); 
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+  }
+  .lux-icon { 
+    background: linear-gradient(135deg, #f59e0b, #ef4444); 
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+  }
+  .matrix-icon {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+  }
+  .pick-icon {
+    background: linear-gradient(135deg, #ec4899, #f43f5e);
+    box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+  }
 
-        .card-subtitle {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            margin-bottom: 0.5rem;
-        }
+  .group-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
 
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            color: #fff;
-            background: var(--accent-color, var(--primary-blue));
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+  .group-meta {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-        .footer-link {
-            margin-top: 3rem;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(90deg, #3182ce, #805ad5);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 14px 0 rgba(49, 130, 206, 0.39);
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+  .hourly-pill {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--accent-green);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
 
-        .footer-link:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 20px 0 rgba(49, 130, 206, 0.5);
-        }
+  .count {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
 
-        /* Multicolored accent themes per crypto */
-        .card-xrp { --accent-color: #23292F; }
-        .card-btc { --accent-color: #F7931A; }
-        .card-shib { --accent-color: #FFA409; }
-        .card-usdt { --accent-color: #26A17B; }
-        .card-trx { --accent-color: #FF060A; }
-        .card-ltc { --accent-color: #345D9D; }
-        .card-sol { --accent-color: #9945FF; }
-        .card-doge { --accent-color: #C2A633; }
-        .card-ton { --accent-color: #0098EA; }
-        
-        /* New FaucetMatrix Accents */
-        .card-eth { --accent-color: #627EEA; }
-        .card-usd { --accent-color: #26A17B; }
-        .card-bch { --accent-color: #8DC351; }
-        .card-bnb { --accent-color: #F3BA2F; }
-        .card-arb { --accent-color: #28A0F0; }
-        .card-sui { --accent-color: #4DA2FF; }
-        .card-trump { --accent-color: #B22222; }
-    </style>
+  /* Faucet Grid */
+  .faucet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .faucet-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faucet-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .faucet-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .faucet-card:hover::before {
+    opacity: 1;
+  }
+
+  .drop-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--glow-drop);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+
+  .lux-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--glow-lux);
+    border-color: rgba(245, 158, 11, 0.3);
+  }
+
+  .matrix-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--glow-matrix);
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+
+  .pick-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--glow-pick);
+    border-color: rgba(236, 72, 153, 0.3);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .coin-token {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), rgba(0,0,0,0.2));
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .coin-token img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+
+  .faucet-card:hover .coin-token {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4), 0 0 20px rgba(255,255,255,0.1);
+  }
+
+  .payout-pill {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
+    color: var(--accent-green);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  .card-middle {
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  .faucet-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+  }
+
+  .domain {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    background: rgba(255,255,255,0.03);
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  .card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .frequency {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    background: rgba(255,255,255,0.05);
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+  }
+
+  .faucet-card:hover .action-btn {
+    background: var(--text-primary);
+    color: var(--bg-dark);
+    gap: 10px;
+  }
+
+  .action-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s;
+  }
+
+  .faucet-card:hover .action-btn svg {
+    transform: translateX(3px);
+  }
+
+  /* Ad Section */
+  .ad-section {
+    margin-top: 50px;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .ad-label {
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  #frame {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    z-index: 99998;
+  }
+
+  #frame iframe {
+    border: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 728px;
+    height: auto;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 24px;
+    border-top: 1px solid var(--border-color);
+  }
+
+  footer p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  footer strong {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .container { padding: 24px 16px; }
+    .faucet-grid { grid-template-columns: 1fr; gap: 12px; }
+    .faucet-card { padding: 20px; flex-direction: row; align-items: center; gap: 16px; }
+    .card-top { margin-bottom: 0; flex-direction: column; align-items: center; }
+    .card-middle { margin-bottom: 0; text-align: left; flex: 1; }
+    .card-bottom { border-top: none; padding-top: 0; flex-direction: column; align-items: flex-end; gap: 8px; }
+    .coin-token { width: 48px; height: 48px; }
+    .coin-token img { width: 28px; height: 28px; }
+  }
+</style>
 </head>
 <body>
 
-    <h1>Best Hourly Faucets — Free Crypto Every Hour</h1>
-    <p class="subtitle">🔥 Best Hourly Faucets — All links open in new tab</p>
+<div class="container">
 
-    <!-- LUX GROUP -->
-    <div class="group-title lux-group">💎 LUX GROUP</div>
-    <div class="grid">
-        <a href="https://xrplux.io/?ref=allfaucet" target="_blank" rel="noopener noreferrer" class="card card-xrp">
-            <img src="https://allfaucet.buzz/images/xrplux.png" alt="XRP Lux">
-            <div class="card-content">
-                <div class="card-title">XRP Lux</div>
-                <div class="card-subtitle">Free XRP</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+  <header>
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      Live & Paying
+    </div>
+    <h1>Premium Hourly Faucets</h1>
+    <p class="tagline">Claim <span>high payouts</span> every hour • Instant withdrawals • <span>Low minimum</span></p>
+  </header>
 
-        <a href="https://btclux.io/?ref=allfaucet" target="_blank" rel="noopener noreferrer" class="card card-btc">
-            <img src="https://btclux.io/assets/web_assets/img/favicon.png" alt="BTC Lux">
-            <div class="card-content">
-                <div class="card-title">BTC Lux</div>
-                <div class="card-subtitle">Free BTC</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
-
-        <a href="https://shibalux.io/?ref=allfaucet" target="_blank" rel="noopener noreferrer" class="card card-shib">
-            <img src="https://shibalux.io/assets/web_assets/img/favicon.png" alt="Shiba Lux">
-            <div class="card-content">
-                <div class="card-title">Shiba Lux</div>
-                <div class="card-subtitle">Free SHIB</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
-
-        <a href="https://usdtlux.io/?ref=allfaucet" target="_blank" rel="noopener noreferrer" class="card card-usdt">
-            <img src="https://usdtlux.io/assets/web_assets/img/favicon.png" alt="USDT Lux">
-            <div class="card-content">
-                <div class="card-title">USDT Lux</div>
-                <div class="card-subtitle">Free USDT</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
-
-        <a href="https://tronlux.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="card card-trx">
-            <img src="https://tronlux.io/assets/web_assets/img/favicon.png" alt="TRON Lux">
-            <div class="card-content">
-                <div class="card-title">TRON Lux</div>
-                <div class="card-subtitle">Free TRX</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+  <!-- DROP GROUP -->
+  <section class="group">
+    <div class="group-header">
+      <div class="group-icon drop-icon">💧</div>
+      <div class="group-title">Drop Group</div>
+      <div class="group-meta">
+        <span class="hourly-pill">⚡ Hourly</span>
+        <span class="count">3 faucets</span>
+      </div>
     </div>
 
-    <!-- EASY GROUP -->
-    <div class="group-title easy-group">🚀 EASY GROUP</div>
-    <div class="grid">
-        <a href="https://easylite.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="card card-ltc">
-            <img src="https://easylite.io/assets/img/favicon.svg" alt="Easy Lite">
-            <div class="card-content">
-                <div class="card-title">Easy Lite</div>
-                <div class="card-subtitle">Free LTC</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+    <div class="faucet-grid">
+      <a href="https://dropbtc.io/?ref=Saroj_Bhattarai" target="_blank" class="faucet-card drop-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" alt="BTC">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Drop BTC</div>
+          <div class="domain">dropbtc.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
 
-        <a href="https://easysolana.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="card card-sol">
-            <img src="https://easysolana.io/assets/img/favicon.svg" alt="Easy Solana">
-            <div class="card-content">
-                <div class="card-title">Easy Solana</div>
-                <div class="card-subtitle">Free SOL</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+      <a href="https://dropbnb.io/?ref=Saroj_Bhattarai" target="_blank" class="faucet-card drop-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/bnb-bnb-logo.svg" alt="BNB">
+          </div>
+          <div class="payout-pill"> High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Drop BNB</div>
+          <div class="domain">dropbnb.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
 
-        <a href="https://easydoge.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="card card-doge">
-            <img src="https://easydoge.io/assets/img/favicon.svg" alt="Easy Doge">
-            <div class="card-content">
-                <div class="card-title">Easy Doge</div>
-                <div class="card-subtitle">Free DOGE</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+      <a href="https://droptrx.io/?ref=Saroj_Bhattarai" target="_blank" class="faucet-card drop-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/tron-trx-logo.svg" alt="TRX">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Drop TRX</div>
+          <div class="domain">droptrx.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency"> Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </section>
 
-        <a href="https://easytrx.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="card card-trx">
-            <img src="https://easytrx.io/assets/img/favicon.svg" alt="Easy TRX">
-            <div class="card-content">
-                <div class="card-title">Easy TRX</div>
-                <div class="card-subtitle">Free TRX</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
-
-        <a href="https://easyton.io/?ref=cryptohama" target="_blank" rel="noopener noreferrer" class="card card-ton">
-            <img src="https://easyton.io/assets/img/favicon.svg" alt="Easy TON">
-            <div class="card-content">
-                <div class="card-title">Easy TON</div>
-                <div class="card-subtitle">Free TON</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+  <!-- LUX GROUP -->
+  <section class="group">
+    <div class="group-header">
+      <div class="group-icon lux-icon">✨</div>
+      <div class="group-title">Lux Group</div>
+      <div class="group-meta">
+        <span class="hourly-pill">⚡ Hourly</span>
+        <span class="count">6 faucets</span>
+      </div>
     </div>
 
-    <!-- FaucetMatrix Team GROUP -->
-    <div class="group-title matrix-group">🧩 FaucetMatrix Team</div>
-    <div class="grid">
-        <a href="https://freeeth.in?ref=SP5eGVmzbq" target="_blank" rel="noopener noreferrer" class="card card-eth">
-            <img src="https://allfaucet.buzz/images/eth.png" alt="FreeETH">
-            <div class="card-content">
-                <div class="card-title">FreeETH</div>
-                <div class="card-subtitle">Free Ethereum</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+    <div class="faucet-grid">
+      <a href="https://pepelux.io/?ref=allfaucet" target="_blank" class="faucet-card lux-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/pepe-pepe-logo.svg" alt="PEPE">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Pepe Lux</div>
+          <div class="domain">pepelux.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
 
-        <a href="https://freebtcco.in?ref=50ktSJCFSV" target="_blank" rel="noopener noreferrer" class="card card-btc">
-            <img src="https://allfaucet.buzz/images/btc.png" alt="freebtcco">
-            <div class="card-content">
-                <div class="card-title">freebtcco</div>
-                <div class="card-subtitle">Free Bitcoin</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+      <a href="https://btclux.io/?ref=allfaucet" target="_blank" class="faucet-card lux-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" alt="BTC">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">BTC Lux</div>
+          <div class="domain">btclux.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
 
-        <a href="https://usdpick.io/?ref=2YNsiKH5Pm" target="_blank" rel="noopener noreferrer" class="card card-usd">
-            <img src="https://allfaucet.buzz/images/usdpick.ico" alt="USD Pick">
-            <div class="card-content">
-                <div class="card-title">USD Pick</div>
-                <div class="card-subtitle">Free USDT/USD</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+      <a href="https://shibalux.io/?ref=allfaucet" target="_blank" class="faucet-card lux-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/shiba-inu-shib-logo.svg" alt="SHIB">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Shiba Lux</div>
+          <div class="domain">shibalux.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
 
-        <a href="https://freebch.in?ref=n2cVl80AjV" target="_blank" rel="noopener noreferrer" class="card card-bch">
-            <img src="https://allfaucet.buzz/images/bch.png" alt="Free BCH">
-            <div class="card-content">
-                <div class="card-title">Free BCH</div>
-                <div class="card-subtitle">Free Bitcoin Cash</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+      <a href="https://usdtlux.io/?ref=allfaucet" target="_blank" class="faucet-card lux-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/tether-usdt-logo.svg" alt="USDT">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">USDT Lux</div>
+          <div class="domain">usdtlux.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
 
-        <a href="https://freebnb.in/?ref=c_C17pD1qk" target="_blank" rel="noopener noreferrer" class="card card-bnb">
-            <img src="https://allfaucet.buzz/images/freebnb.ico" alt="FreeBNB">
-            <div class="card-content">
-                <div class="card-title">FreeBNB</div>
-                <div class="card-subtitle">Free BNB</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+      <a href="https://tronlux.io/?ref=cryptohama" target="_blank" class="faucet-card lux-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/tron-trx-logo.svg" alt="TRX">
+          </div>
+          <div class="payout-pill"> High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Tron Lux</div>
+          <div class="domain">tronlux.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
 
-        <a href="https://freearb.in/?ref=rqhw_EhmdU" target="_blank" rel="noopener noreferrer" class="card card-arb">
-            <img src="https://allfaucet.buzz/images/arb.ico" alt="FreeARB">
-            <div class="card-content">
-                <div class="card-title">FreeARB</div>
-                <div class="card-subtitle">Free Arbitrum</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+      <a href="https://xrplux.io/?ref=allfaucet" target="_blank" class="faucet-card lux-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/xrp-xrp-logo.svg" alt="XRP">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">XRP Lux</div>
+          <div class="domain">xrplux.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </section>
 
-        <a href="https://freexrp.in/?ref=EC02DzCFlo" target="_blank" rel="noopener noreferrer" class="card card-xrp">
-            <img src="https://allfaucet.buzz/images/xrp.png" alt="FreeXRP">
-            <div class="card-content">
-                <div class="card-title">FreeXRP</div>
-                <div class="card-subtitle">Free Ripple</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
-
-        <a href="https://freesui.in/?ref=1hESc5Zc2H" target="_blank" rel="noopener noreferrer" class="card card-sui">
-            <img src="https://allfaucet.buzz/images/sui.png" alt="FreeSUI">
-            <div class="card-content">
-                <div class="card-title">FreeSUI</div>
-                <div class="card-subtitle">Free Sui</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
-
-        <a href="https://freetron.in/?ref=jL6msw2hE9" target="_blank" rel="noopener noreferrer" class="card card-trx">
-            <img src="https://allfaucet.buzz/images/tron.png" alt="FreeTRON">
-            <div class="card-content">
-                <div class="card-title">FreeTRON</div>
-                <div class="card-subtitle">Free TRON</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
-
-        <a href="https://freeshib.in/?ref=Mkm32etV7z" target="_blank" rel="noopener noreferrer" class="card card-shib">
-            <img src="https://allfaucet.buzz/images/shib.png" alt="FreeSHIB">
-            <div class="card-content">
-                <div class="card-title">FreeSHIB</div>
-                <div class="card-subtitle">Free Shiba Inu</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
-
-        <a href="https://freetrump.in/?ref=lF4eqoT4m-" target="_blank" rel="noopener noreferrer" class="card card-trump">
-            <img src="https://allfaucet.buzz/images/trump.png" alt="FreeTRUMP">
-            <div class="card-content">
-                <div class="card-title">FreeTRUMP</div>
-                <div class="card-subtitle">Free TRUMP</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
-
-        <a href="https://freetoncoin.in/?ref=pC0i7TcNwH" target="_blank" rel="noopener noreferrer" class="card card-ton">
-            <img src="https://allfaucet.buzz/images/freeton.svg" alt="FreeTON">
-            <div class="card-content">
-                <div class="card-title">FreeTON</div>
-                <div class="card-subtitle">Free TON Coin</div>
-                <span class="badge">Claim Hourly</span>
-            </div>
-        </a>
+  <!-- FAUCETMATRIX GROUP -->
+  <section class="group">
+    <div class="group-header">
+      <div class="group-icon matrix-icon">🔷</div>
+      <div class="group-title">FaucetMatrix Group</div>
+      <div class="group-meta">
+        <span class="hourly-pill">⚡ Hourly</span>
+        <span class="count">12 faucets</span>
+      </div>
     </div>
 
-    <a href="https://allfaucet.buzz" target="_blank" rel="noopener noreferrer" class="footer-link">
-        🌐 Discover More Faucets
-    </a>
+    <div class="faucet-grid">
+      <a href="https://dogedrop.co?ref=1hESc5Zc2H" target="_blank" class="faucet-card matrix-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/dogecoin-doge-logo.svg" alt="DOGE">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Doge Drop</div>
+          <div class="domain">dogedrop.co</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency"> Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://freebtcco.in?ref=50ktSJCFSV" target="_blank" class="faucet-card matrix-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" alt="BTC">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Free BTC</div>
+          <div class="domain">freebtcco.in</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://usdpick.io/?ref=2YNsiKH5Pm" target="_blank" class="faucet-card matrix-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.svg" alt="USDC">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">USD Pick</div>
+          <div class="domain">usdpick.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency"> Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://freebch.in?ref=n2cVl80AjV" target="_blank" class="faucet-card matrix-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/bitcoin-cash-bch-logo.svg" alt="BCH">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Free BCH</div>
+          <div class="domain">freebch.in</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://freebnb.in/?ref=c_C17pD1qk" target="_blank" class="faucet-card matrix-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/bnb-bnb-logo.svg" alt="BNB">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Free BNB</div>
+          <div class="domain">freebnb.in</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://freearb.in/?ref=rqhw_EhmdU" target="_blank" class="faucet-card matrix-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/arbitrum-arb-logo.svg" alt="ARB">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Free ARB</div>
+          <div class="domain">freearb.in</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://freexrp.in/?ref=EC02DzCFlo" target="_blank" class="faucet-card matrix-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/xrp-xrp-logo.svg" alt="XRP">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Free XRP</div>
+          <div class="domain">freexrp.in</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://freetron.in/?ref=jL6msw2hE9" target="_blank" class="faucet-card matrix-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/tron-trx-logo.svg" alt="TRX">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Free TRON</div>
+          <div class="domain">freetron.in</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://freeshib.in/?ref=Mkm32etV7z" target="_blank" class="faucet-card matrix-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/shiba-inu-shib-logo.svg" alt="SHIB">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Free SHIB</div>
+          <div class="domain">freeshib.in</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://freetrump.in/?ref=lF4eqoT4m-" target="_blank" class="faucet-card matrix-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/magatric-maga-logo.png" alt="TRUMP" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🇺🇸%3C/text%3E%3C/svg%3E'">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Free TRUMP</div>
+          <div class="domain">freetrump.in</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://freetoncoin.in/?ref=pC0i7TcNwH" target="_blank" class="faucet-card matrix-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/ton-the-open-network-logo.svg" alt="TON">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Free TON</div>
+          <div class="domain">freetoncoin.in</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://freeeth.in?ref=SP5eGVmzbq" target="_blank" class="faucet-card matrix-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg" alt="ETH">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Free ETH</div>
+          <div class="domain">freeeth.in</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency"> Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- PICK GROUP -->
+  <section class="group">
+    <div class="group-header">
+      <div class="group-icon pick-icon">🎯</div>
+      <div class="group-title">Pick Group</div>
+      <div class="group-meta">
+        <span class="hourly-pill">⚡ Hourly</span>
+        <span class="count">9 faucets</span>
+      </div>
+    </div>
+
+    <div class="faucet-grid">
+      <a href="https://bchpick.io/?ref=saroje" target="_blank" class="faucet-card pick-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/bitcoin-cash-bch-logo.svg" alt="BCH">
+          </div>
+          <div class="payout-pill"> High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">BCH Pick</div>
+          <div class="domain">bchpick.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://litepick.io/?ref=cryptohama" target="_blank" class="faucet-card pick-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.svg" alt="LTC">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Lite Pick</div>
+          <div class="domain">litepick.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://tronpick.io/?ref=cryptohama" target="_blank" class="faucet-card pick-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/tron-trx-logo.svg" alt="TRX">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Tron Pick</div>
+          <div class="domain">tronpick.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://dogepick.io/?ref=cryptohama" target="_blank" class="faucet-card pick-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/dogecoin-doge-logo.svg" alt="DOGE">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Doge Pick</div>
+          <div class="domain">dogepick.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://solpick.io/?ref=cryptohama" target="_blank" class="faucet-card pick-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/solana-sol-logo.svg" alt="SOL">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Sol Pick</div>
+          <div class="domain">solpick.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://bnbpick.io/?ref=cryptohama" target="_blank" class="faucet-card pick-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/bnb-bnb-logo.svg" alt="BNB">
+          </div>
+          <div class="payout-pill"> High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">BNB Pick</div>
+          <div class="domain">bnbpick.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://tonpick.game/?ref=cryptohama" target="_blank" class="faucet-card pick-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/ton-the-open-network-logo.svg" alt="TON">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">TON Pick</div>
+          <div class="domain">tonpick.game</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://suipick.io/?ref=cryptohama" target="_blank" class="faucet-card pick-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/sui-sui-logo.svg" alt="SUI">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">Sui Pick</div>
+          <div class="domain">suipick.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency">🕒 Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://polpick.io/?ref=cryptohama" target="_blank" class="faucet-card pick-card">
+        <div class="card-top">
+          <div class="coin-token">
+            <img src="https://cryptologos.cc/logos/polygon-pol-logo.svg" alt="POL">
+          </div>
+          <div class="payout-pill">🔥 High Payout</div>
+        </div>
+        <div class="card-middle">
+          <div class="faucet-name">POL Pick</div>
+          <div class="domain">polpick.io</div>
+        </div>
+        <div class="card-bottom">
+          <span class="frequency"> Every 60 min</span>
+          <span class="action-btn">Claim <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Ad Section -->
+  <div class="ad-section">
+    <div class="ad-label">Advertisement</div>
+    <!-- BEGIN AADS AD UNIT 2443371 -->
+    <div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
+      <iframe data-aa='2443371' src='//acceptable.a-ads.com/2443371/?size=Adaptive'
+        style='border:0; padding:0; width:100%; max-width:728px; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
+    </div>
+    <!-- END AADS AD UNIT 2443371 -->
+  </div>
+
+  <footer>
+    <p><strong>30 Premium Faucets</strong> • 4 Trusted Networks • Hourly Claims • Verified High Payouts • Low Minimum Withdrawal</p>
+  </footer>
+
+</div>
 
 </body>
 </html>
