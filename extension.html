@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Allfaucet.buzz Rotator - Compact, draggable crypto faucet rotator for Firefox. Maximize your earnings with automated navigation.">
+    <title>Allfaucet.buzz Rotator - Firefox Extension</title>
+    <style>
+        :root {
+            --primary: #6750A4;
+            --primary-light: #D0BCFF;
+            --primary-dark: #4F378B;
+            --secondary: #625B71;
+            --background: #0F0F1A;
+            --surface: #1E1E2E;
+            --surface-light: #2D2D3D;
+            --text-primary: #E6E1E5;
+            --text-secondary: #CAC4D0;
+            --border: rgba(255, 255, 255, 0.1);
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --gradient-primary: linear-gradient(135deg, #6750A4 0%, #9a82db 100%);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+            --shadow-lg: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(103, 80, 164, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(154, 130, 219, 0.1) 0%, transparent 50%);
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: var(--text-secondary);
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(103, 80, 164, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--surface-light);
+            border-color: var(--primary);
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            font-size: 1.2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 5rem 2rem;
+            background: var(--surface);
+            margin: 4rem 0;
+        }
+
+        .steps {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            animation: fadeInLeft 0.6s ease both;
+        }
+
+        .step:nth-child(1) { animation-delay: 0.1s; }
+        .step:nth-child(2) { animation-delay: 0.3s; }
+        .step:nth-child(3) { animation-delay: 0.5s; }
+        .step:nth-child(4) { animation-delay: 0.7s; }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+        }
+
+        /* Privacy Section */
+        .privacy {
+            padding: 5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .privacy-box {
+            background: var(--surface);
+            border: 2px solid var(--success);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 2rem;
+        }
+
+        .privacy-box h3 {
+            color: var(--success);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--surface);
+            margin-top: 4rem;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-email {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1.5rem 3rem;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(103, 80, 164, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Allfaucet.buzz Rotator</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Maximize Your Crypto Faucet Earnings</h1>
+        <p class="tagline">Compact. Automated. Efficient.</p>
+        <p class="description">
+            Allfaucet.buzz Rotator is a powerful Firefox extension that automates navigation between 
+            multiple crypto faucets. Save time, increase earnings, and keep your browser clutter-free 
+            with our ultra-compact, draggable interface.
+        </p>
+        <div class="cta-buttons">
+            <a href="https://addons.mozilla.org/firefox/addon/allfaucet-buzz-rotator/" class="btn btn-primary">
+                 Install for Firefox
+            </a>
+            <a href="#how-it-works" class="btn btn-secondary">
+                📖 How to Use
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">Powerful Features</h2>
+        <p class="section-subtitle">Everything you need to optimize your faucet claiming experience</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <h3>Ultra-Compact Design</h3>
+                <p>
+                    Side-by-side layout displays 5-minute and 1-hour faucets in a single, 
+                    space-efficient row. No bulky toolbars or wasted screen space.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Draggable & Dockable</h3>
+                <p>
+                    Move the rotator anywhere on your screen with the drag handle. 
+                    It remembers your preferred position across all browsing sessions.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>One-Click Navigation</h3>
+                <p>
+                    Instantly jump between faucets with arrow buttons. No more manually 
+                    typing URLs or digging through bookmarks.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔽</div>
+                <h3>Smart Minimize</h3>
+                <p>
+                    Collapse the entire interface into a tiny, highly visible button when 
+                    not in use. Expand with a single click when ready to claim.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Auto-Updates</h3>
+                <p>
+                    Remote configuration automatically fetches the latest working faucet 
+                    links. Get new sites without ever updating the extension.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌗</div>
+                <h3>Dark & Light Mode</h3>
+                <p>
+                    Beautiful glassmorphism design that adapts to your system's theme 
+                    preferences automatically.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Get started in 4 simple steps</p>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Install the Extension</h3>
+                    <p>
+                        Click the "Install for Firefox" button above to add the extension to your browser. 
+                        It will appear in your toolbar with a purple icon.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Navigate to a Faucet</h3>
+                    <p>
+                        Visit any supported crypto faucet website. The compact rotator bar will 
+                        automatically appear on your screen, showing your available faucet intervals.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Rotate Between Faucets</h3>
+                    <p>
+                        Use the arrow buttons (◀ ▶) to quickly navigate between faucets in your 
+                        5-minute or 1-hour lists. The extension tracks which site you're on and 
+                        jumps to the next/previous one instantly.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Customize Your Experience</h3>
+                    <p>
+                        Drag the rotator to your preferred screen location using the handle (⋮⋮). 
+                        Click the minimize button (−) to collapse it when done. Your settings are 
+                        automatically saved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="privacy" id="privacy">
+        <h2 class="section-title">Your Privacy Matters</h2>
+        <p class="section-subtitle">Built with privacy-first principles</p>
+        
+        <div class="privacy-box">
+            <h3>🔒 Zero Data Collection</h3>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8;">
+                This extension does <strong>not</strong> collect, store, or transmit any personal data. 
+                We don't track your browsing history, we don't sell your information, and we don't 
+                require any permissions beyond what's necessary for the extension to function.
+                <br><br>
+                The only data saved is your UI preferences (position, collapsed state) stored locally 
+                in your browser. The only external request is to fetch the public faucet configuration 
+                from our server.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">
+                We'd love to hear from you! Your feedback helps us make the extension better.
+            </p>
+            
+            <p style="color: var(--text-secondary); font-size: 1.2rem; margin: 2rem 0;">
+                Have a suggestion? Found a bug? Want to request a new feature?<br>
+                Send us an email and we'll get back to you as soon as possible.
+            </p>
+
+            <a href="mailto:samundrana@gmail.com?subject=Allfaucet.buzz Rotator Extension Feedback" class="contact-email">
+                ✉️ samundrana@gmail.com
+            </a>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: var(--background); border-radius: 12px;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary-light);">What to Include in Your Email</h3>
+                <ul style="text-align: left; color: var(--text-secondary); line-height: 2; list-style-position: inside;">
+                    <li><strong>For Suggestions:</strong> Describe your idea and how it would improve the extension</li>
+                    <li><strong>For Complaints/Bugs:</strong> Include steps to reproduce, Firefox version, and screenshots if possible</li>
+                    <li><strong>For Feature Requests:</strong> Explain the feature you'd like and why you need it</li>
+                    <li><strong>General Questions:</strong> We're here to help with any questions about using the extension</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2024 Allfaucet.buzz Rotator. Made with ❤️ for the crypto community.<br>
+            <a href="https://allfaucet.buzz">Visit Allfaucet.buzz</a>
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
