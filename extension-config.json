@@ -14,12 +14,10 @@
     "https://cryptoflare.net/faucet"
   ],
   "sites1Hour": [
-    "https://example15m.com/faucet",
-    "https://another15m.com/claim",
-    "https://example30m.com/faucet",
-    "https://another30m.com/claim",
+    "https://dropbtc.io/#",
     "https://dropbnb.io/#",
     "https://droptrx.io/#",
+    "https://ltcbet.win/faucet",
     "https://pepelux.io/faucet.php",
     "https://btclux.io/faucet.php",
     "https://tronlux.io/faucet.php",
@@ -41,7 +39,7 @@
   ],
   "ads": [
     {
-      "text": "Support by joining through our website.",
+      "text": "Support by joining faucets through our website Allfaucet.buzz",
       "url": "https://allfaucet.buzz",
       "badge": "FREE"
     }
