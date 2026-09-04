@@ -1,20 +1,23 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "sites5Min": [
-    "https://viefaucet.com/",
+    "https://viefaucet.com/app/faucet",
+    "https://freeltc.online/faucet",
+    "https://claimclicks.com/faucet",
+    "https://cointapper.io/faucet",
+    "https://coinpayz.xyz/faucet",
     "https://earnbitmoon.club/",
-    "https://faucetcrypto.com/",
-    "https://coinpayu.com/"
-  ],
-  "sites15Min": [
-    "https://example15m.com/faucet",
-    "https://another15m.com/claim"
-  ],
-  "sites30Min": [
-    "https://example30m.com/faucet",
-    "https://another30m.com/claim"
+    "https://earnbitsun.club/faucet",
+    "https://tap-coin.de/user/faucet",
+    "https://bitupdate.info/faucet",
+    "https://nevcoins.club/claim.html",
+    "https://cryptoflare.net/faucet"
   ],
   "sites1Hour": [
+    "https://example15m.com/faucet",
+    "https://another15m.com/claim",
+    "https://example30m.com/faucet",
+    "https://another30m.com/claim",
     "https://dropbnb.io/#",
     "https://droptrx.io/#",
     "https://pepelux.io/faucet.php",
@@ -39,7 +42,8 @@
   "ads": [
     {
       "text": "Support by joining through our website.",
-      "url": "https://allfaucet.buzz"
+      "url": "https://allfaucet.buzz",
+      "badge": "FREE"
     }
   ]
 }
