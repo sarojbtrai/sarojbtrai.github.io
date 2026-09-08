@@ -1,0 +1,47 @@
+{
+  "version": "2.1.0",
+  "sites5Min": [
+    "https://viefaucet.com/app/faucet",
+    "https://freeltc.online/faucet",
+    "https://claimclicks.com/faucet",
+    "https://cointapper.io/faucet",
+    "https://coinpayz.xyz/faucet",
+    "https://earnbitmoon.club/",
+    "https://earnbitsun.club/faucet",
+    "https://tap-coin.de/user/faucet",
+    "https://bitupdate.info/faucet",
+    "https://nevcoins.club/claim.html",
+    "https://cryptoflare.net/faucet"
+  ],
+  "sites1Hour": [
+    "https://dropbtc.io/#",
+    "https://dropbnb.io/#",
+    "https://droptrx.io/#",
+    "https://ltcbet.win/faucet",
+    "https://pepelux.io/faucet.php",
+    "https://btclux.io/faucet.php",
+    "https://tronlux.io/faucet.php",
+    "https://shibalux.io/faucet.php",
+    "https://usdtlux.io/faucet.php",
+    "https://xrplux.io/faucet.php",
+    "https://freebtcco.in/faucet",
+    "https://usdpick.io/faucet",
+    "https://dogedrop.co/faucet",
+    "https://freeeth.in/faucet",
+    "https://freebch.in/faucet",
+    "https://freearb.in/faucet",
+    "https://freexrp.in/faucet",
+    "https://freetron.in/faucet",
+    "https://freeshib.in/faucet",
+    "https://freetrump.in/faucet",
+    "https://freebnb.in/faucet",
+    "https://freetoncoin.in/faucet"
+  ],
+  "ads": [
+    {
+      "text": "Support by joining faucets through our website Allfaucet.buzz",
+      "url": "https://allfaucet.buzz",
+      "badge": "FREE"
+    }
+  ]
+}
