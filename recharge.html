@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allfaucet Mobile Recharge</title>
+    <meta name="description" content="Recharge your mobile instantly. Pay securely via FaucetPay.">
+    
+    <!-- Google Fonts: Inter for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --bg-color: #f0f9ff;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px -10px rgba(37, 99, 235, 0.15);
+            padding: 32px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            width: 18px;
+            height: 18px;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 12px 14px 12px 42px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 0.95rem;
+            font-family: inherit;
+            color: var(--text-main);
+            background-color: #fafafa;
+            transition: all 0.2s ease;
+            appearance: none;
+        }
+
+        .form-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 40px;
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-input:disabled, .form-select:disabled {
+            background-color: #f1f5f9;
+            color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .amount-section {
+            margin-bottom: 24px;
+        }
+
+        .amount-chips {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .amount-chip {
+            padding: 10px 4px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            background: #fff;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .amount-chip:hover {
+            border-color: var(--primary-light);
+            background: #eff6ff;
+        }
+
+        .amount-chip.selected {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+
+        /* Flashy, modern blue button with shimmer effect */
+        .submit-btn {
+            width: 100%;
+            padding: 14px 24px;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--primary-dark) 100%);
+            background-size: 200% 200%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background-position: right center;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+        }
+
+        .submit-btn:hover:not(:disabled)::after {
+            left: 100%;
+        }
+
+        .submit-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.6s;
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 24px 20px;
+            }
+            .amount-chips {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    Allfaucet Recharge
+                </h1>
+                <p>Top up your mobile instantly. Secure payment via FaucetPay.</p>
+            </div>
+
+            <form id="rechargeForm">
+                <!-- Country Selection -->
+                <div class="form-group">
+                    <label class="form-label" for="country">Country</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        <select id="country" class="form-select" required>
+                            <option value="">Select your country</option>
+                            <option value="india">India 🇮🇳</option>
+                            <option value="philippines">Philippines 🇵🇭</option>
+                            <option value="bangladesh">Bangladesh 🇧🇩</option>
+                            <option value="pakistan">Pakistan 🇵🇰</option>
+                            <option value="kenya">Kenya 🇰🇪</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label class="form-label" for="phone">Mobile Number</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <input type="tel" id="phone" class="form-input" placeholder="Enter mobile number" required>
+                    </div>
+                </div>
+
+                <!-- Mobile Operator -->
+                <div class="form-group">
+                    <label class="form-label" for="operator">Mobile Operator</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                        <select id="operator" class="form-select" disabled required>
+                            <option value="">Select country first</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Amount Selection -->
+                <div class="amount-section">
+                    <label class="form-label" id="amountLabel">Recharge Amount</label>
+                    <div class="amount-chips" id="amountChips">
+                        <!-- Chips will be injected dynamically -->
+                    </div>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        <input type="number" id="customAmount" class="form-input" placeholder="Select a country first" min="1" step="1" disabled required>
+                    </div>
+                </div>
+
+                <!-- Recharge Button -->
+                <button type="submit" class="submit-btn" id="submitBtn" disabled>
+                    <span class="btn-text">Pay via FaucetPay</span>
+                    <div class="spinner" id="spinner"></div>
+                </button>
+            </form>
+
+            <div class="footer-note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                Secured & processed instantly
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Comprehensive data mapping countries to their currency, symbols, operators, and typical recharge amounts
+        const countryData = {
+            "india": { 
+                name: "India", 
+                currency: "INR", 
+                symbol: "₹", 
+                operators: ["Jio", "Airtel", "Vi (Vodafone Idea)", "BSNL"], 
+                amounts: [100, 200, 500, 1000] 
+            },
+            "philippines": { 
+                name: "Philippines", 
+                currency: "PHP", 
+                symbol: "₱", 
+                operators: ["Globe", "Smart", "DITO"], 
+                amounts: [50, 100, 300, 500] 
+            },
+            "bangladesh": { 
+                name: "Bangladesh", 
+                currency: "BDT", 
+                symbol: "৳", 
+                operators: ["Grameenphone", "Robi", "Banglalink", "Teletalk"], 
+                amounts: [50, 100, 300, 500] 
+            },
+            "pakistan": { 
+                name: "Pakistan", 
+                currency: "PKR", 
+                symbol: "₨", 
+                operators: ["Jazz", "Telenor", "Zong", "Ufone"], 
+                amounts: [100, 300, 500, 1000] 
+            },
+            "kenya": { 
+                name: "Kenya", 
+                currency: "KES", 
+                symbol: "KSh", 
+                operators: ["Safaricom", "Airtel Kenya", "Telkom Kenya"], 
+                amounts: [50, 100, 500, 1000] 
+            }
+        };
+
+        const countrySelect = document.getElementById('country');
+        const operatorSelect = document.getElementById('operator');
+        const amountChipsContainer = document.getElementById('amountChips');
+        const customAmount = document.getElementById('customAmount');
+        const amountLabel = document.getElementById('amountLabel');
+        const rechargeForm = document.getElementById('rechargeForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const spinner = document.getElementById('spinner');
+
+        // Dynamic UI Update based on Country Selection
+        countrySelect.addEventListener('change', function() {
+            const countryCode = this.value;
+            
+            // Reset form elements
+            operatorSelect.innerHTML = '<option value="">Select Mobile Operator</option>';
+            operatorSelect.disabled = true;
+            amountChipsContainer.innerHTML = '';
+            customAmount.value = '';
+            customAmount.disabled = true;
+            customAmount.placeholder = 'Select a country first';
+            submitBtn.disabled = true;
+            
+            // Remove any existing selected chips
+            document.querySelectorAll('.amount-chip').forEach(c => c.classList.remove('selected'));
+
+            if (countryCode && countryData[countryCode]) {
+                const data = countryData[countryCode];
+                
+                // 1. Populate Operators
+                operatorSelect.disabled = false;
+                data.operators.forEach(operator => {
+                    const option = document.createElement('option');
+                    option.value = operator;
+                    option.textContent = operator;
+                    operatorSelect.appendChild(option);
+                });
+
+                // 2. Update Amount Label and Input Placeholder
+                amountLabel.textContent = `Recharge Amount (${data.currency})`;
+                customAmount.disabled = false;
+                customAmount.placeholder = `Enter amount in ${data.currency}`;
+
+                // 3. Generate Amount Chips
+                data.amounts.forEach(amount => {
+                    const chip = document.createElement('button');
+                    chip.type = 'button';
+                    chip.className = 'amount-chip';
+                    chip.dataset.amount = amount;
+                    chip.textContent = `${data.symbol}${amount}`;
+                    
+                    chip.addEventListener('click', function() {
+                        // Remove selected class from all chips
+                        document.querySelectorAll('.amount-chip').forEach(c => c.classList.remove('selected'));
+                        // Add to clicked chip
+                        this.classList.add('selected');
+                        // Update custom input
+                        customAmount.value = this.dataset.amount;
+                        // Enable submit button
+                        submitBtn.disabled = false;
+                    });
+                    
+                    amountChipsContainer.appendChild(chip);
+                });
+            }
+        });
+
+        // Clear chip selection when manually typing
+        customAmount.addEventListener('input', function() {
+            document.querySelectorAll('.amount-chip').forEach(c => c.classList.remove('selected'));
+            submitBtn.disabled = this.value === '' || parseFloat(this.value) <= 0;
+        });
+
+        // Form Submission Handling
+        rechargeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const countryCode = countrySelect.value;
+            const data = countryData[countryCode];
+            const operator = operatorSelect.value;
+            const phone = document.getElementById('phone').value;
+            const amount = customAmount.value;
+
+            // Basic Validation
+            if (!countryCode || !operator || !phone || !amount) {
+                alert('Please fill in all fields correctly.');
+                return;
+            }
+
+            if (parseFloat(amount) <= 0) {
+                alert(`Please enter a valid amount greater than 0 ${data.currency}.`);
+                return;
+            }
+
+            // Simulate FaucetPay API Processing
+            submitBtn.disabled = true;
+            btnText.textContent = 'Processing Payment...';
+            spinner.style.display = 'block';
+
+            setTimeout(() => {
+                // Success State
+                alert(`✅ Success!\n\n${data.symbol}${amount} ${data.currency} has been successfully recharged to:\n${phone} (${operator})\n\nPayment processed securely via FaucetPay.`);
+                
+                // Reset Form
+                rechargeForm.reset();
+                countrySelect.dispatchEvent(new Event('change')); // Trigger reset logic
+                
+                // Reset Button
+                submitBtn.disabled = true;
+                btnText.textContent = 'Pay via FaucetPay';
+                spinner.style.display = 'none';
+            }, 2000); // 2-second simulated delay
+        });
+    </script>
+</body>
+</html>
