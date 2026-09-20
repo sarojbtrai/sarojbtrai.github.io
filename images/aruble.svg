@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta name="viewport" content="width=device-width" /><title>https://aruble.net/assets/images/favicon.svg</title><link rel="stylesheet" type="text/css" href="resource://content-accessible/viewsource.css" /></head><body id="viewsource" style="tab-size: 4"><span id="line1"><span></span><span>&lt;<span class="start-tag">svg</span> <span class="attribute-name">width</span>="<a class="attribute-value">64</a>" <span class="attribute-name">height</span>="<a class="attribute-value">64</a>" <span class="attribute-name">viewBox</span>="<a class="attribute-value">0 0 64 64</a>" <span class="attribute-name">fill</span>="<a class="attribute-value">none</a>" <span class="attribute-name">xmlns</span>="<a class="attribute-value">http://www.w3.org/2000/svg</a>"&gt;</span><span>
-</span></span><span id="line2"><span>    </span><span>&lt;<span class="start-tag">rect</span> <span class="attribute-name">width</span>="<a class="attribute-value">64</a>" <span class="attribute-name">height</span>="<a class="attribute-value">64</a>" <span class="attribute-name">rx</span>="<a class="attribute-value">16</a>" <span class="attribute-name">fill</span>="<a class="attribute-value">#0A0B10</a>"<span>/</span>&gt;</span><span>
-</span></span><span id="line3"><span>    </span><span>&lt;<span class="start-tag">g</span> <span class="attribute-name">transform</span>="<a class="attribute-value">translate(10, 10)</a>"&gt;</span><span>
-</span></span><span id="line4"><span>        </span><span>&lt;<span class="start-tag">defs</span>&gt;</span><span>
-</span></span><span id="line5"><span>            </span><span>&lt;<span class="start-tag">linearGradient</span> <span class="attribute-name">id</span>="<a class="attribute-value">luxBrand</a>" <span class="attribute-name">x1</span>="<a class="attribute-value">0%</a>" <span class="attribute-name">y1</span>="<a class="attribute-value">100%</a>" <span class="attribute-name">x2</span>="<a class="attribute-value">100%</a>" <span class="attribute-name">y2</span>="<a class="attribute-value">0%</a>"&gt;</span><span>
-</span></span><span id="line6"><span>                </span><span>&lt;<span class="start-tag">stop</span> <span class="attribute-name">offset</span>="<a class="attribute-value">0%</a>" <span class="attribute-name">stop-color</span>="<a class="attribute-value">#3b82f6</a>"<span>/</span>&gt;</span><span>
-</span></span><span id="line7"><span>                </span><span>&lt;<span class="start-tag">stop</span> <span class="attribute-name">offset</span>="<a class="attribute-value">50%</a>" <span class="attribute-name">stop-color</span>="<a class="attribute-value">#8b5cf6</a>"<span>/</span>&gt;</span><span>
-</span></span><span id="line8"><span>                </span><span>&lt;<span class="start-tag">stop</span> <span class="attribute-name">offset</span>="<a class="attribute-value">100%</a>" <span class="attribute-name">stop-color</span>="<a class="attribute-value">#ec4899</a>"<span>/</span>&gt;</span><span>
-</span></span><span id="line9"><span>            </span><span>&lt;/<span class="end-tag">linearGradient</span>&gt;</span><span>
-</span></span><span id="line10"><span>        </span><span>&lt;/<span class="end-tag">defs</span>&gt;</span><span>
-</span></span><span id="line11"><span>        </span><span>&lt;<span class="start-tag">path</span> <span class="attribute-name">d</span>="<a class="attribute-value">M 22 2 L 3 40 L 9 40 L 22 14 L 35 40 L 41 40 Z</a>" <span class="attribute-name">fill</span>="<a class="attribute-value">url(#luxBrand)</a>"<span>/</span>&gt;</span><span>
-</span></span><span id="line12"><span>        </span><span>&lt;<span class="start-tag">path</span> <span class="attribute-name">d</span>="<a class="attribute-value">M 22 20 L 26 28 L 22 36 L 18 28 Z</a>" <span class="attribute-name">fill</span>="<a class="attribute-value">url(#luxBrand)</a>"<span>/</span>&gt;</span><span>
-</span></span><span id="line13"><span>    </span><span>&lt;/<span class="end-tag">g</span>&gt;</span><span>
-</span></span><span id="line14"><span></span><span>&lt;/<span class="end-tag">svg</span>&gt;</span><span>
-</span></span><span id="line15"><span></span></span></body></html>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="16" fill="#0A0B10"/>
+    <g transform="translate(10, 10)">
+        <defs>
+            <linearGradient id="luxBrand" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#3b82f6"/>
+                <stop offset="50%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#ec4899"/>
+            </linearGradient>
+        </defs>
+        <path d="M 22 2 L 3 40 L 9 40 L 22 14 L 35 40 L 41 40 Z" fill="url(#luxBrand)"/>
+        <path d="M 22 20 L 26 28 L 22 36 L 18 28 Z" fill="url(#luxBrand)"/>
+    </g>
+</svg>
