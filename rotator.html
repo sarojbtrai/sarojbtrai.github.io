@@ -1271,119 +1271,116 @@ if (msgEl) {setInterval(() => {msgEl.style.opacity = '0';setTimeout(() => {msgIn
 const backToTopBtn = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {if (window.scrollY > 300) backToTopBtn.classList.add('visible');else backToTopBtn.classList.remove('visible');});
 backToTopBtn.addEventListener('click', () => {window.scrollTo({ top: 0, behavior: 'smooth' });});
-
 document.addEventListener('DOMContentLoaded', () => {
-    const categories = ['new', 'short', 'long'];
-    const tables = {};
-    const counts = {};
-    const settingsBtn = document.getElementById('settingsBtn');
-    const getStorage = (key) => { try { return localStorage.getItem(key); } catch(e) { return null; } };
-    const setStorage = (key, val) => { try { localStorage.setItem(key, val); } catch(e) {} };
-    const getJSON = (key, def) => { try { return JSON.parse(localStorage.getItem(key)) || def; } catch(e) { return def; } };
-    const setJSON = (key, val) => { try { localStorage.setItem(key, JSON.stringify(val)); } catch(e) {} };
-    categories.forEach(cat => {
-        const table = document.getElementById('table-' + cat);
-        if (table) { tables[cat] = table; counts[cat] = document.getElementById('count-' + cat); }
-    });
-    let settingsMode = false;
-    let hiddenFaucets = getJSON('rotator-hidden', []);
-    function getFaucetId(row) {
-        const nameEl = row.querySelector('.faucet-name');
-        const fname = nameEl ? nameEl.textContent : '';
-        return 'faucet_' + (fname + '|' + row.dataset.url).replace(/[^a-zA-Z0-9]/g, '').substring(0, 60);
-    }
-    function renderAll() {
-        Object.keys(tables).forEach(cat => {
-            const table = tables[cat];
-            const rows = table.querySelectorAll('tbody tr');
-            let visibleCount = 0;
-            rows.forEach(row => {
-                if (row.classList.contains('empty-state')) return;
-                const id = getFaucetId(row);
-                const isHidden = hiddenFaucets.includes(id);
-                if (settingsMode) {
-                    row.style.display = '';
-                    row.classList.toggle('hidden-row', isHidden);
-                    const hideBtn = row.querySelector('.hide-btn');
-                    if (hideBtn) {
-                        hideBtn.textContent = isHidden ? 'Unhide' : 'Hide';
-                        hideBtn.classList.toggle('unhide', isHidden);
-                    }
-                    visibleCount++;
-                } else {
-                    if (isHidden) { row.style.display = 'none'; }
-                    else { row.style.display = ''; row.classList.remove('hidden-row'); visibleCount++; }
-                }
-            });
-            if (counts[cat]) counts[cat].textContent = visibleCount + ' Faucet' + (visibleCount !== 1 ? 's' : '');
-            table.classList.toggle('settings-mode', settingsMode);
-        });
-    }
-
-    // --- OPTIMIZED TIMER LOGIC (Fixes the "Heavy/Laggy" feeling) ---
-    const claimBtns = Array.from(document.querySelectorAll('.claim-btn'));
-    const timerData = claimBtns.map(btn => {
-        const row = btn.closest('tr');
-        const id = getFaucetId(row);
-        return {
-            btn, row,
-            storageKey: 'timer_' + id,
-            timerSeconds: parseInt(row.dataset.timer, 10),
-            lastText: ''
-        };
-    });
-    function updateAllTimers() {
-        const now = Date.now();
-        timerData.forEach(t => {
-            const readyTime = parseInt(getStorage(t.storageKey) || '0', 10);
-            const timeLeft = Math.max(0, readyTime - now);
-            let newText;
-            if (timeLeft > 0) {
-                t.btn.disabled = true;
-                const h = Math.floor(timeLeft / 3600000);
-                const m = Math.floor((timeLeft % 3600000) / 60000);
-                const s = Math.floor((timeLeft % 60000) / 1000);
-                newText = h > 0 ? h + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0') : m + ':' + String(s).padStart(2,'0');
-            } else {
-                if (t.btn.disabled) t.btn.disabled = false;
-                newText = 'Claim';
-            }
-            // Only update DOM if text actually changed (Massive CPU saver)
-            if (t.lastText !== newText) {
-                t.btn.textContent = newText;
-                t.lastText = newText;
-            }
-        });
-    }
-    updateAllTimers();
-    setInterval(updateAllTimers, 1000); // Single global loop instead of N loops
-    claimBtns.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-            if (btn.disabled) return;
-            const t = timerData[index];
-            window.open(t.row.dataset.url, '_blank', 'noopener,noreferrer');
-            setStorage(t.storageKey, (Date.now() + t.timerSeconds * 1000).toString());
-            updateAllTimers();
-        });
-    });
-    // ---------------------------------------------------------------
-
-    document.querySelectorAll('.hide-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const id = getFaucetId(btn.closest('tr'));
-            const idx = hiddenFaucets.indexOf(id);
-            if (idx > -1) hiddenFaucets.splice(idx, 1);
-            else hiddenFaucets.push(id);
-            setJSON('rotator-hidden', hiddenFaucets);
-            renderAll();
-        });
-    });
-    settingsBtn.addEventListener('click', () => {
-        settingsMode = !settingsMode;
-        settingsBtn.classList.toggle('active', settingsMode);
-        renderAll();
-    });
-    renderAll();
+const categories = ['new', 'short', 'long'];
+const tables = {};
+const counts = {};
+const settingsBtn = document.getElementById('settingsBtn');
+const getStorage = (key) => { try { return localStorage.getItem(key); } catch(e) { return null; } };
+const setStorage = (key, val) => { try { localStorage.setItem(key, val); } catch(e) {} };
+const getJSON = (key, def) => { try { return JSON.parse(localStorage.getItem(key)) || def; } catch(e) { return def; } };
+const setJSON = (key, val) => { try { localStorage.setItem(key, JSON.stringify(val)); } catch(e) {} };
+categories.forEach(cat => {
+const table = document.getElementById('table-' + cat);
+if (table) { tables[cat] = table; counts[cat] = document.getElementById('count-' + cat); }
+});
+let settingsMode = false;
+let hiddenFaucets = getJSON('rotator-hidden', []);
+function getFaucetId(row) {
+const nameEl = row.querySelector('.faucet-name');
+const fname = nameEl ? nameEl.textContent : '';
+return 'faucet_' + (fname + '|' + row.dataset.url).replace(/[^a-zA-Z0-9]/g, '').substring(0, 60);
+}
+function renderAll() {
+Object.keys(tables).forEach(cat => {
+const table = tables[cat];
+const rows = table.querySelectorAll('tbody tr');
+let visibleCount = 0;
+rows.forEach(row => {
+if (row.classList.contains('empty-state')) return;
+const id = getFaucetId(row);
+const isHidden = hiddenFaucets.includes(id);
+if (settingsMode) {
+row.style.display = '';
+row.classList.toggle('hidden-row', isHidden);
+const hideBtn = row.querySelector('.hide-btn');
+if (hideBtn) {
+hideBtn.textContent = isHidden ? 'Unhide' : 'Hide';
+hideBtn.classList.toggle('unhide', isHidden);
+}
+visibleCount++;
+} else {
+if (isHidden) { row.style.display = 'none'; }
+else { row.style.display = ''; row.classList.remove('hidden-row'); visibleCount++; }
+}
+});
+if (counts[cat]) counts[cat].textContent = visibleCount + ' Faucet' + (visibleCount !== 1 ? 's' : '');
+table.classList.toggle('settings-mode', settingsMode);
+});
+}
+// --- OPTIMIZED TIMER LOGIC (Fixes the "Heavy/Laggy" feeling) ---
+const claimBtns = Array.from(document.querySelectorAll('.claim-btn'));
+const timerData = claimBtns.map(btn => {
+const row = btn.closest('tr');
+const id = getFaucetId(row);
+return {
+btn, row,
+storageKey: 'timer_' + id,
+timerSeconds: parseInt(row.dataset.timer, 10),
+lastText: ''
+};
+});
+function updateAllTimers() {
+const now = Date.now();
+timerData.forEach(t => {
+const readyTime = parseInt(getStorage(t.storageKey) || '0', 10);
+const timeLeft = Math.max(0, readyTime - now);
+let newText;
+if (timeLeft > 0) {
+t.btn.disabled = true;
+const h = Math.floor(timeLeft / 3600000);
+const m = Math.floor((timeLeft % 3600000) / 60000);
+const s = Math.floor((timeLeft % 60000) / 1000);
+newText = h > 0 ? h + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0') : m + ':' + String(s).padStart(2,'0');
+} else {
+if (t.btn.disabled) t.btn.disabled = false;
+newText = 'Claim';
+}
+// Only update DOM if text actually changed (Massive CPU saver)
+if (t.lastText !== newText) {
+t.btn.textContent = newText;
+t.lastText = newText;
+}
+});
+}
+updateAllTimers();
+setInterval(updateAllTimers, 1000); // Single global loop instead of N loops
+claimBtns.forEach((btn, index) => {
+btn.addEventListener('click', () => {
+if (btn.disabled) return;
+const t = timerData[index];
+window.open(t.row.dataset.url, '_blank', 'noopener,noreferrer');
+setStorage(t.storageKey, (Date.now() + t.timerSeconds * 1000).toString());
+updateAllTimers();
+});
+});
+// ---------------------------------------------------------------
+document.querySelectorAll('.hide-btn').forEach(btn => {
+btn.addEventListener('click', () => {
+const id = getFaucetId(btn.closest('tr'));
+const idx = hiddenFaucets.indexOf(id);
+if (idx > -1) hiddenFaucets.splice(idx, 1);
+else hiddenFaucets.push(id);
+setJSON('rotator-hidden', hiddenFaucets);
+renderAll();
+});
+});
+settingsBtn.addEventListener('click', () => {
+settingsMode = !settingsMode;
+settingsBtn.classList.toggle('active', settingsMode);
+renderAll();
+});
+renderAll();
 });
 </script>
 </body>
