@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-50N8ELQ3GG"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-50N8ELQ3GG');</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ytkttjpolq");
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AllFaucet.buzz Rotator | Free Crypto Faucets</title>
 <meta name="description" content="Auto-rotating crypto faucets with smart timers. Claim free crypto daily from verified, high-paying faucets.">
 <meta name="keywords" content="crypto faucet, free crypto, faucet rotator, auto claim faucet, faucet timer, hourly faucet, 5 minute faucet, earn crypto, FaucetPay, AllFaucet">
-
 <!-- Open Graph -->
 <meta property="og:title" content="AllFaucet.buzz Rotator | Free Crypto Faucets">
 <meta property="og:description" content="Auto-rotating crypto faucets with smart timers. Claim free crypto daily from verified, high-paying faucets.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://allfaucet.buzz/rotator.html">
 <meta property="og:image" content="https://allfaucet.buzz/images/og-faucets.jpg">
-
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AllFaucet.buzz Rotator | Free Crypto Faucets">
 <meta name="twitter:description" content="Auto-rotating crypto faucets with smart timers. Claim free crypto daily from verified, high-paying faucets.">
 <meta name="twitter:image" content="https://allfaucet.buzz/images/og-faucets.jpg">
-
 <link rel="canonical" href="https://allfaucet.buzz/rotator.html">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='0.9em'%20font-size='90'%20text-anchor='middle'%20x='50'%3E🚀%3C/text%3E%3C/svg%3E">
-
 <!-- Font Preloading -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -1237,16 +1237,13 @@ let currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
 function applyTheme(mode) {if (mode === 'dark') { body.classList.remove('light-mode'); themeIcon.textContent = '☀️'; }else { body.classList.add('light-mode'); themeIcon.textContent = '🌙'; }currentTheme = mode;}
 applyTheme(currentTheme);
 themeToggle.addEventListener('click', () => {const newTheme = currentTheme === 'dark' ? 'light' : 'dark';applyTheme(newTheme);localStorage.setItem('rotator-theme', newTheme);});
-
 const supportMessages = ["Support us by joining through the Join buttons if you haven't signed up yet!","Click on setting icon at right to show or hide faucets."];
 let msgIndex = 0;
 const msgEl = document.getElementById('supportMessageText');
 if (msgEl) {setInterval(() => {msgEl.style.opacity = '0';setTimeout(() => {msgIndex = (msgIndex + 1) % supportMessages.length;msgEl.textContent = supportMessages[msgIndex];msgEl.style.opacity = '1';}, 300);}, 60000);}
-
 const backToTopBtn = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {if (window.scrollY > 300) backToTopBtn.classList.add('visible');else backToTopBtn.classList.remove('visible');});
 backToTopBtn.addEventListener('click', () => {window.scrollTo({ top: 0, behavior: 'smooth' });});
-
 document.addEventListener('DOMContentLoaded', () => {
 const categories = ['new', 'short', 'long'];
 const tables = {};
@@ -1256,21 +1253,17 @@ const getStorage = (key) => { try { return localStorage.getItem(key); } catch(e)
 const setStorage = (key, val) => { try { localStorage.setItem(key, val); } catch(e) {} };
 const getJSON = (key, def) => { try { return JSON.parse(localStorage.getItem(key)) || def; } catch(e) { return def; } };
 const setJSON = (key, val) => { try { localStorage.setItem(key, JSON.stringify(val)); } catch(e) {} };
-
 categories.forEach(cat => {
 const table = document.getElementById('table-' + cat);
 if (table) { tables[cat] = table; counts[cat] = document.getElementById('count-' + cat); }
 });
-
 let settingsMode = false;
 let hiddenFaucets = getJSON('rotator-hidden', []);
-
 function getFaucetId(row) {
 const nameEl = row.querySelector('.faucet-name');
 const fname = nameEl ? nameEl.textContent : '';
 return 'faucet_' + (fname + '|' + row.dataset.url).replace(/[^a-zA-Z0-9]/g, '').substring(0, 60);
 }
-
 function renderAll() {
 Object.keys(tables).forEach(cat => {
 const table = tables[cat];
@@ -1298,7 +1291,6 @@ if (counts[cat]) counts[cat].textContent = visibleCount + ' Faucet' + (visibleCo
 table.classList.toggle('settings-mode', settingsMode);
 });
 }
-
 const claimBtns = Array.from(document.querySelectorAll('.claim-btn'));
 const timerData = claimBtns.map(btn => {
 const row = btn.closest('tr');
@@ -1310,7 +1302,6 @@ timerSeconds: parseInt(row.dataset.timer, 10),
 lastText: ''
 };
 });
-
 function updateAllTimers() {
 const now = Date.now();
 timerData.forEach(t => {
@@ -1335,7 +1326,6 @@ t.lastText = newText;
 }
 updateAllTimers();
 setInterval(updateAllTimers, 1000);
-
 claimBtns.forEach((btn, index) => {
 btn.addEventListener('click', () => {
 if (btn.disabled) return;
@@ -1345,7 +1335,6 @@ setStorage(t.storageKey, (Date.now() + t.timerSeconds * 1000).toString());
 updateAllTimers();
 });
 });
-
 document.querySelectorAll('.hide-btn').forEach(btn => {
 btn.addEventListener('click', () => {
 const id = getFaucetId(btn.closest('tr'));
@@ -1356,7 +1345,6 @@ setJSON('rotator-hidden', hiddenFaucets);
 renderAll();
 });
 });
-
 settingsBtn.addEventListener('click', () => {
 settingsMode = !settingsMode;
 settingsBtn.classList.toggle('active', settingsMode);
